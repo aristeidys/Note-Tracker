@@ -14,28 +14,23 @@ import UIKit
 
 protocol NoteBusinessLogic
 {
-  func doSomething(request: Note.Something.Request)
+  func newNote(request: Note.Create.Request)
 }
 
-protocol NoteDataStore
-{
-  //var name: String { get set }
+protocol NoteDataStore {
+    //var name: String { get set }
 }
 
-class NoteInteractor: NoteBusinessLogic, NoteDataStore
-{
-  var presenter: NotePresentationLogic?
-  var worker: NoteWorker?
-  //var name: String = ""
+class NoteInteractor: NoteBusinessLogic, NoteDataStore {
+ 
+	var presenter: NotePresentationLogic?
+	var worker: NoteRepositoryLogic = NoteWorker()
+
   
-  // MARK: Do something
-  
-  func doSomething(request: Note.Something.Request)
-  {
-    worker = NoteWorker()
-    worker?.doSomeWork()
-    
-    let response = Note.Something.Response()
+	func newNote(request: Note.Create.Request) {
+    let response = Note.Create.Response()
+	
+	worker.createNote(title: request.title, text: request.text)
     presenter?.presentSomething(response: response)
   }
 }

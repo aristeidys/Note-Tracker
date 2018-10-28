@@ -45,7 +45,7 @@ class NotePresenterTests: XCTestCase
   {
     var displaySomethingCalled = false
     
-    func displaySomething(viewModel: Note.Something.ViewModel)
+    func displaySomething(viewModel: Note.Create.ViewModel)
     {
       displaySomethingCalled = true
     }
@@ -58,7 +58,7 @@ class NotePresenterTests: XCTestCase
     // Given
     let spy = NoteDisplayLogicSpy()
     sut.viewController = spy
-    let response = Note.Something.Response()
+    let response = Note.Create.Response()
     
     // When
     sut.presentSomething(response: response)

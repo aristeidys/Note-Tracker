@@ -56,7 +56,7 @@ class NoteViewControllerTests: XCTestCase
   {
     var doSomethingCalled = false
     
-    func doSomething(request: Note.Something.Request)
+    func newNote(request: Note.Create.Request)
     {
       doSomethingCalled = true
     }

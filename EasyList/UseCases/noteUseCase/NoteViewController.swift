@@ -14,7 +14,7 @@ import UIKit
 
 protocol NoteDisplayLogic: class
 {
-  func displaySomething(viewModel: Note.Something.ViewModel)
+  func displaySomething(viewModel: Note.Create.ViewModel)
 }
 
 class NoteViewController: UIViewController, NoteDisplayLogic
@@ -72,11 +72,11 @@ class NoteViewController: UIViewController, NoteDisplayLogic
   
   func doSomething()
   {
-    let request = Note.Something.Request()
-    interactor?.doSomething(request: request)
+    //let request = Note.Create.Request()
+    //interactor?.newNote(request: request)
   }
   
-  func displaySomething(viewModel: Note.Something.ViewModel)
+  func displaySomething(viewModel: Note.Create.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }

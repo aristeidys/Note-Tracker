@@ -11,7 +11,9 @@ import XCTest
 import RealmSwift
 import Realm
 
-class EasyListTests: XCTestCase {
+
+/// logs the realm database url
+class RealmURL: XCTestCase {
 
     let realm = AbstractRepository().realm
     

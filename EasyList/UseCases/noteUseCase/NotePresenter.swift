@@ -14,7 +14,7 @@ import UIKit
 
 protocol NotePresentationLogic
 {
-  func presentSomething(response: Note.Something.Response)
+  func presentSomething(response: Note.Create.Response)
 }
 
 class NotePresenter: NotePresentationLogic
@@ -23,9 +23,9 @@ class NotePresenter: NotePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Note.Something.Response)
+  func presentSomething(response: Note.Create.Response)
   {
-    let viewModel = Note.Something.ViewModel()
+    let viewModel = Note.Create.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

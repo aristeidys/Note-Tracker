@@ -10,11 +10,17 @@ import Foundation
 import RealmSwift
 
 protocol Repository {
-    
+    func save(entity: Object)
 }
 
 public class AbstractRepository: Repository {
     
     let realm = try! Realm()
     
+    internal func save(entity: Object) {
+        
+        try! realm.write {
+            realm.add(entity)
+        }
+    }
 }

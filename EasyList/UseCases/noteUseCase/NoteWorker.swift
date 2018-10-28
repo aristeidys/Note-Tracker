@@ -13,20 +13,21 @@
 import UIKit
 import RealmSwift
 
-class NoteWorker
+protocol NoteRepositoryLogic {
+    func createNote(title: String, text: String)
+}
+
+class NoteWorker: AbstractRepository, NoteRepositoryLogic
 {
-    func doSomeWork()
-    {
+    
+    func createNote(title: String = "", text: String = "") {
+        let note = NoteModel(title: title)
+        note.title = title
+        note.text = text
+        save(entity: note)
     }
     
-    func createNote(title: String = "")
-    {
-        let realm = try! Realm()
-
-        try! realm.write {
-            let note = NoteModel()
-            note.title = title
-            realm.add(note)
-        }
+    func getAll() -> Results<NoteModel> {
+        return realm.objects(NoteModel.self)
     }
 }

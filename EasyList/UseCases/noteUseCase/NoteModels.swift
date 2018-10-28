@@ -13,20 +13,30 @@
 import UIKit
 import RealmSwift
 
-class NoteModel: Object {
-    @objc dynamic var title: String = ""
-    @objc dynamic var text: String = ""
-    @objc dynamic var editedDate: Date? = nil
+@objcMembers class NoteModel: Object {
+    
+    dynamic var id = 0
+    dynamic var title: String = ""
+    dynamic var text: String = ""
+    dynamic var editedDate: Date? = nil
+    
+    convenience init(title: String = "", text: String = "") {
+        self.init()
+        self.title = title
+        self.text = text
+    }
 }
 
 enum Note
 {
   // MARK: Use cases
   
-  enum Something
+  enum Create
   {
     struct Request
     {
+        var title: String
+        var text: String
     }
     struct Response
     {

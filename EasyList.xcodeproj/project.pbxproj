@@ -15,15 +15,17 @@
 		190BEB2E217F804A00BC5DF2 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB28217F804A00BC5DF2 /* NoteInteractor.swift */; };
 		190BEB3B217F80CA00BC5DF2 /* NoteViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB37217F80CA00BC5DF2 /* NoteViewControllerTests.swift */; };
 		190BEB3C217F80CA00BC5DF2 /* NoteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB38217F80CA00BC5DF2 /* NoteInteractorTests.swift */; };
-		190BEB3D217F80CA00BC5DF2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
 		190BEB3E217F80CA00BC5DF2 /* NotePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB3A217F80CA00BC5DF2 /* NotePresenterTests.swift */; };
 		191EDCE4217F29530098640D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCE3217F29530098640D /* AppDelegate.swift */; };
 		191EDCE9217F29530098640D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCE7217F29530098640D /* Main.storyboard */; };
 		191EDCEB217F29540098640D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCEA217F29540098640D /* Assets.xcassets */; };
 		191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCEC217F29540098640D /* LaunchScreen.storyboard */; };
-		191EDCF9217F29540098640D /* EasyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCF8217F29540098640D /* EasyListTests.swift */; };
+		191EDCF9217F29540098640D /* RealmURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCF8217F29540098640D /* RealmURL.swift */; };
 		191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDD05217F30BE0098640D /* AbstractRepository.swift */; };
+		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
+		19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */; };
 		19E93B022180CB840031A3AA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19E93B012180CB840031A3AA /* Podfile */; };
+		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		1BB3B1EF5C7A5BEE8FA5A98A /* Pods_EasyList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79088C43DEE459C1DA380634 /* Pods_EasyList.framework */; };
 		52CC66F52DBC14233F2D9823 /* Pods_EasyListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F35CC57B8F6F2549B2A85F4 /* Pods_EasyListTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +46,7 @@
 		190BEB25217F804A00BC5DF2 /* NoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
 		190BEB26217F804A00BC5DF2 /* NoteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModels.swift; sourceTree = "<group>"; };
 		190BEB27217F804A00BC5DF2 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
-		190BEB28217F804A00BC5DF2 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
+		190BEB28217F804A00BC5DF2 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; usesTabs = 1; };
 		190BEB37217F80CA00BC5DF2 /* NoteViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewControllerTests.swift; sourceTree = "<group>"; };
 		190BEB38217F80CA00BC5DF2 /* NoteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractorTests.swift; sourceTree = "<group>"; };
 		190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWorkerTests.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -56,10 +58,12 @@
 		191EDCED217F29540098640D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		191EDCEF217F29540098640D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		191EDCF4217F29540098640D /* EasyListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		191EDCF8217F29540098640D /* EasyListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyListTests.swift; sourceTree = "<group>"; };
+		191EDCF8217F29540098640D /* RealmURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmURL.swift; sourceTree = "<group>"; };
 		191EDCFA217F29540098640D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		191EDD05217F30BE0098640D /* AbstractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRepository.swift; sourceTree = "<group>"; };
+		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
 		19E93B012180CB840031A3AA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		5F35CC57B8F6F2549B2A85F4 /* Pods_EasyListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79088C43DEE459C1DA380634 /* Pods_EasyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF22B9F873673EAF5812158 /* Pods-EasyListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyListTests/Pods-EasyListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,25 +96,18 @@
 			isa = PBXGroup;
 			children = (
 				190BEB23217F804A00BC5DF2 /* NotePresenter.swift */,
+				190BEB3A217F80CA00BC5DF2 /* NotePresenterTests.swift */,
 				190BEB24217F804A00BC5DF2 /* NoteWorker.swift */,
+				190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */,
 				190BEB25217F804A00BC5DF2 /* NoteRouter.swift */,
 				190BEB26217F804A00BC5DF2 /* NoteModels.swift */,
+				19E93B032180D2DC0031A3AA /* NoteModeTests.swift */,
 				190BEB27217F804A00BC5DF2 /* NoteViewController.swift */,
+				190BEB37217F80CA00BC5DF2 /* NoteViewControllerTests.swift */,
 				190BEB28217F804A00BC5DF2 /* NoteInteractor.swift */,
-				190BEB3F217F80D000BC5DF2 /* tests */,
+				190BEB38217F80CA00BC5DF2 /* NoteInteractorTests.swift */,
 			);
 			path = noteUseCase;
-			sourceTree = "<group>";
-		};
-		190BEB3F217F80D000BC5DF2 /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				190BEB37217F80CA00BC5DF2 /* NoteViewControllerTests.swift */,
-				190BEB38217F80CA00BC5DF2 /* NoteInteractorTests.swift */,
-				190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */,
-				190BEB3A217F80CA00BC5DF2 /* NotePresenterTests.swift */,
-			);
-			path = tests;
 			sourceTree = "<group>";
 		};
 		191EDCD7217F29530098640D = {
@@ -148,7 +145,6 @@
 		191EDCF7217F29540098640D /* EasyListTests */ = {
 			isa = PBXGroup;
 			children = (
-				191EDCF8217F29540098640D /* EasyListTests.swift */,
 				191EDCFA217F29540098640D /* Info.plist */,
 			);
 			path = EasyListTests;
@@ -158,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				191EDD05217F30BE0098640D /* AbstractRepository.swift */,
+				19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */,
+				191EDCF8217F29540098640D /* RealmURL.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -395,8 +393,10 @@
 				190BEB3B217F80CA00BC5DF2 /* NoteViewControllerTests.swift in Sources */,
 				190BEB3E217F80CA00BC5DF2 /* NotePresenterTests.swift in Sources */,
 				190BEB3C217F80CA00BC5DF2 /* NoteInteractorTests.swift in Sources */,
-				191EDCF9217F29540098640D /* EasyListTests.swift in Sources */,
-				190BEB3D217F80CA00BC5DF2 /* NoteWorkerTests.swift in Sources */,
+				19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */,
+				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
+				19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */,
+				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
