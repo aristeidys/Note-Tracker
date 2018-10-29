@@ -26,23 +26,3 @@ import RealmSwift
         self.text = text
     }
 }
-
-enum Note
-{
-  // MARK: Use cases
-  
-  enum Create
-  {
-    struct Request
-    {
-        var title: String
-        var text: String
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
-}
