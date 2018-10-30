@@ -25,6 +25,8 @@
 		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
 		19C8E4522187C46800CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
 		19C8E4532187C46800CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
+		19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E455218840E300CC506C /* UITextField+Extension.swift */; };
+		19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */; };
 		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC352421873CFF00807FA2 /* KeyboardViewController.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */; };
@@ -64,6 +66,8 @@
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
 		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		19C8E455218840E300CC506C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionTests.swift; sourceTree = "<group>"; };
 		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		19EC352421873CFF00807FA2 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		1999E155217F499E0067962E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				19C8E4542188408300CC506C /* Views */,
 				191EDCEA217F29540098640D /* Assets.xcassets */,
 				191EDCEC217F29540098640D /* LaunchScreen.storyboard */,
 				191EDCE3217F29530098640D /* AppDelegate.swift */,
@@ -188,6 +193,15 @@
 				19C8E44C2187C2DF00CC506C /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19C8E4542188408300CC506C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19C8E455218840E300CC506C /* UITextField+Extension.swift */,
+				19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +333,7 @@
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
 				191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */,
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
+				19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteViewController.swift in Sources */,
 				19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */,
 				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,
@@ -331,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */,
 				190BEB3B217F80CA00BC5DF2 /* NoteViewControllerTests.swift in Sources */,
 				19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */,
 				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
@@ -495,7 +511,7 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				DEVELOPMENT_TEAM = AZXQE7588Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -521,7 +537,7 @@
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				DEVELOPMENT_TEAM = AZXQE7588Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -546,7 +562,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				DEVELOPMENT_TEAM = AZXQE7588Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -571,7 +587,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				DEVELOPMENT_TEAM = AZXQE7588Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

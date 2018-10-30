@@ -15,7 +15,7 @@ class NoteInteractorTests: XCTestCase {
         
         sut.worker = spy
         
-        sut.saveQuickNote(quickText: "call Worker")
+        sut.processText( "call Worker")
         
         XCTAssertEqual(spy.text, "call Worker")
     }

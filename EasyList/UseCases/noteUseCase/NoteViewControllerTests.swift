@@ -22,15 +22,9 @@ class NoteViewControllerTests: XCTestCase {
         XCTAssertTrue(interactor.noteText == "insered Text")
     }
     
-    func test_onNoteSubmited_only_if_field_filled() {
-        sut.submitButton.sendActions(for: .touchUpInside)
-        XCTAssertTrue(interactor.noteText == "nil")
-    }
-    
     //MARK: Spys
     
     class NotePresenterSpy: NotePresenterLogic {
-
         func getFieldPlaceholder() -> String {
             return "thePlaceholder"
         }
@@ -38,7 +32,7 @@ class NoteViewControllerTests: XCTestCase {
     
     class NoteInteractorSpy: NoteInteractorLogic {
         var noteText = "nil"
-        func saveQuickNote(quickText: String) {
+        func processText(_ quickText: String) {
             noteText = quickText
         }
     }
