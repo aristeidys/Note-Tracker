@@ -19,7 +19,7 @@ class NotePresenter: NotePresenterLogic {
     func validateText(_ text: String) {
         
         if text != "" {
-            controller?.onValidText()
+            controller?.onValidTextSubmitted()
         } else {
             controller?.onInvalidText()
         }

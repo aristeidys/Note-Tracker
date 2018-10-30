@@ -4,10 +4,10 @@ import UIKit
 
 protocol NoteControllerLogic {
     func onInvalidText()
-    func onValidText()
+    func onValidTextSubmitted()
 }
 
-class NoteViewController: KeyboardViewController, NoteControllerLogic {
+class NoteViewController: KeyboardViewController, NoteControllerLogic, UITextFieldDelegate  {
 
     
     
@@ -24,6 +24,7 @@ class NoteViewController: KeyboardViewController, NoteControllerLogic {
         
         interactor.presenter = presenter
         presenter.controller = self
+        textField.delegate = self
         
         // Present Something
         textField.placeholder = presenter.getFieldPlaceholder()
@@ -33,12 +34,18 @@ class NoteViewController: KeyboardViewController, NoteControllerLogic {
         interactor.processText(textField.text)
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.textField.showValid()
+        return true
+    }
     
-    func onValidText() {
-        //
+    
+    //MARK: presenter callbacks
+    func onValidTextSubmitted() {
+        textField.text = ""
     }
     
     func onInvalidText() {
-        //
+        textField.showInvalid()
     }
 }

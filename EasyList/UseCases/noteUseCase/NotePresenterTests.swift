@@ -37,7 +37,7 @@ class NotePresenterTests: XCTestCase {
             onInvalidCalled = true
         }
         
-        func onValidText() {
+        func onValidTextSubmitted() {
             onValidCalled = true
         }
         

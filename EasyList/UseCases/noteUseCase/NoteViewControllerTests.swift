@@ -8,11 +8,15 @@ class NoteViewControllerTests: XCTestCase {
     let interactor = NoteInteractorSpy()
 
     func test_noTextInitially() {
-        XCTAssertTrue(sut.textField.text == "")
+        XCTAssert(sut.textField.text == "")
     }
     
     func test_viewDidLoad_triggers_presenter_presentPlaceholder() {
-        XCTAssertTrue(sut.textField.placeholder == "thePlaceholder")
+        XCTAssert(sut.textField.placeholder == "thePlaceholder")
+    }
+    
+    func test_viewDidLoad_setsFieldDelegate() {
+        assert(sut.textField!.delegate === sut)
     }
     
     func test_viewDidLoad_binds_interactor_presenter() {
@@ -29,7 +33,34 @@ class NoteViewControllerTests: XCTestCase {
         sut.textField.text = "insered Text"
         sut.submitButton.sendActions(for: .touchUpInside)
 
-        XCTAssertTrue(interactor.noteText == "insered Text")
+        XCTAssert(interactor.noteText == "insered Text")
+    }
+    
+    func test_onValidText_clearsText() {
+        sut.textField.text = "insered Text"
+
+        sut.onValidTextSubmitted()
+        
+        assert(sut.textField.text == "")
+    }
+    
+    func test_onInvalidText_showsUnderline() {
+        XCTAssertFalse(sut.textField.onlyOneUnderlineExists())
+        
+        sut.onInvalidText()
+        
+        assert(sut.textField.onlyOneUnderlineExists())
+    }
+    
+    func test_onStartTyping_hideUnderline() {
+        sut.textField.text = "hi"
+        sut.onInvalidText()
+        
+        assert(sut.textField.onlyOneUnderlineExists())
+        
+        _ = sut.textField(sut.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 1), replacementString: "hello world")
+        
+        XCTAssertFalse(sut.textField.onlyOneUnderlineExists())
     }
     
     //MARK: Spys

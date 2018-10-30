@@ -20,7 +20,7 @@ extension UITextField {
         lineView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lineView)
         
-        let metrics = ["width" : NSNumber(value: 2)]
+        let metrics = ["width" : NSNumber(value: 1)]
         let views = ["lineView" : lineView]
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineView]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
         
