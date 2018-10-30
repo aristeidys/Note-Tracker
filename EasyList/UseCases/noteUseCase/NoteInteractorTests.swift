@@ -4,28 +4,61 @@ import XCTest
 class NoteInteractorTests: XCTestCase {
    
     let sut = NoteInteractor()
-    let spy = NoteWorkerSpy()
+    let workerSpy = NoteWorkerSpy()
+    let presenterSpy = NotePresenterSpy()
     
     func test_interactor_has_worker() {
-        
         XCTAssertNotNil(sut.worker)
     }
     
-    func test_saveQuickNote_calls_workers_createNote() {
+    func test_processText_calls_workerAndPresenter() {
         
-        sut.worker = spy
-        
+        sut.worker = workerSpy
+        sut.presenter = presenterSpy
+
         sut.processText( "call Worker")
-        
-        XCTAssertEqual(spy.text, "call Worker")
+        assert(workerSpy.createNoteCalled)
+        assert(presenterSpy.validateTextCalled)
     }
     
+    func test_processText_doesnt_process_empty_text() {
+        
+        sut.worker = workerSpy
+        sut.presenter = presenterSpy
+        
+        sut.processText( "")
+        XCTAssertFalse(workerSpy.createNoteCalled)
+        assert(presenterSpy.validateTextCalled)
+    }
+    
+    func test_processText_doesnt_call_workerAndPresenter() {
+        
+        sut.worker = workerSpy
+        sut.presenter = presenterSpy
+        
+        sut.processText(nil)
+        XCTAssertFalse(workerSpy.createNoteCalled)
+        XCTAssertFalse(presenterSpy.validateTextCalled)
+    }
     
     class NoteWorkerSpy: NoteRepositoryLogic {
         
-        var text = ""
+        var createNoteCalled = false
         func createNote(title: String, text: String) {
-            self.text = text
+            createNoteCalled = true
+        }
+    }
+    
+    class NotePresenterSpy: NotePresenterLogic {
+        var controller: NoteControllerLogic?
+        var validateTextCalled = false
+        
+        func getFieldPlaceholder() -> String {
+            return ""
+        }
+        
+        func validateText(_ text: String) {
+            validateTextCalled = true
         }
     }
 }

@@ -1,11 +1,15 @@
 
 import UIKit
 
-protocol NoteInputPresenterLogic {
-    
+
+protocol NoteControllerLogic {
+    func onInvalidText()
+    func onValidText()
 }
 
-class NoteViewController: KeyboardViewController {
+class NoteViewController: KeyboardViewController, NoteControllerLogic {
+
+    
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
@@ -16,13 +20,25 @@ class NoteViewController: KeyboardViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do Binding
+        
+        interactor.presenter = presenter
+        presenter.controller = self
+        
+        // Present Something
         textField.placeholder = presenter.getFieldPlaceholder()
-        submitButton.addTarget(self, action: #selector(onNoteSubmited), for: .touchUpInside)
     }
     
-    @objc func onNoteSubmited(_ sender: Any) {
-        if let text = textField.text {
-            interactor.processText(text)
-        }
+    @IBAction func onNoteSubmitted(_ sender: Any) {
+        interactor.processText(textField.text)
+    }
+    
+    
+    func onValidText() {
+        //
+    }
+    
+    func onInvalidText() {
+        //
     }
 }

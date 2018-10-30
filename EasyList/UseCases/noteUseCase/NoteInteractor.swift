@@ -1,14 +1,22 @@
 import Foundation
 
 protocol NoteInteractorLogic {
-    func processText(_ quickText: String)
+    var presenter: NotePresenterLogic? {get set}
+    func processText(_ quickText: String?)
 }
 
 class NoteInteractor: NoteInteractorLogic {
+    var presenter: NotePresenterLogic?
+    
     var worker: NoteRepositoryLogic = NoteWorker()
     
-    func processText(_ quickText: String) {
-        
-        worker.createNote(title: "", text: quickText)
+    func processText(_ quickText: String?) {
+        guard let text = quickText else {
+            return
+        }
+        if text != "" {
+            worker.createNote(title: "", text: text)
+        }
+        presenter?.validateText(text)
     }
 }

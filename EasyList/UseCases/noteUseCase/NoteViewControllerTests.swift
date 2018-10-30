@@ -15,6 +15,16 @@ class NoteViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.textField.placeholder == "thePlaceholder")
     }
     
+    func test_viewDidLoad_binds_interactor_presenter() {
+        XCTAssertNotNil(interactor.presenter)
+        let interactorPresenter = interactor.presenter as! NotePresenterSpy
+        XCTAssert(interactorPresenter === self.presenter)
+        
+        let presenterController = presenter.controller as! NoteViewController
+        
+        XCTAssert(presenterController === sut)
+    }
+    
     func test_onNoteSubmited_sendsText_to_Interactor() {
         sut.textField.text = "insered Text"
         sut.submitButton.sendActions(for: .touchUpInside)
@@ -25,15 +35,24 @@ class NoteViewControllerTests: XCTestCase {
     //MARK: Spys
     
     class NotePresenterSpy: NotePresenterLogic {
+        var controller: NoteControllerLogic?
+        
         func getFieldPlaceholder() -> String {
             return "thePlaceholder"
+        }
+        func validateText(_ text: String) {
+        //
         }
     }
     
     class NoteInteractorSpy: NoteInteractorLogic {
+        var presenter: NotePresenterLogic?
+
         var noteText = "nil"
-        func processText(_ quickText: String) {
-            noteText = quickText
+        func processText(_ quickText: String?) {
+            if let text = quickText {
+                noteText = text
+            }
         }
     }
     

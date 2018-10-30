@@ -58,6 +58,9 @@
                                     <constraint firstAttribute="width" secondItem="E2W-AE-GVu" secondAttribute="height" id="rAh-xG-RFW"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onNoteSubmitted:" destination="dNL-nE-WDc" eventType="touchUpInside" id="EQD-7L-f7q"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The Placeholder..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-c3-BXL">
                                 <rect key="frame" x="5" y="5" width="310" height="40"/>
