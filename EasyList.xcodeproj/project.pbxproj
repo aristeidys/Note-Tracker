@@ -17,17 +17,20 @@
 		191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCEC217F29540098640D /* LaunchScreen.storyboard */; };
 		191EDCF9217F29540098640D /* RealmURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCF8217F29540098640D /* RealmURL.swift */; };
 		191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDD05217F30BE0098640D /* AbstractRepository.swift */; };
+		1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179A2187AF8B0067EC55 /* MainViewController.swift */; };
+		1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */; };
 		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
 		19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */; };
-		19E93B022180CB840031A3AA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19E93B012180CB840031A3AA /* Podfile */; };
+		19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
+		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
+		19C8E4522187C46800CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
+		19C8E4532187C46800CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
 		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC352421873CFF00807FA2 /* KeyboardViewController.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */; };
 		19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B70218612B600F5FA42 /* NotePresenter.swift */; };
 		19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */; };
 		19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */; };
-		1BB3B1EF5C7A5BEE8FA5A98A /* Pods_EasyList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79088C43DEE459C1DA380634 /* Pods_EasyList.framework */; };
-		52CC66F52DBC14233F2D9823 /* Pods_EasyListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F35CC57B8F6F2549B2A85F4 /* Pods_EasyListTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,36 +59,35 @@
 		191EDCF8217F29540098640D /* RealmURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmURL.swift; sourceTree = "<group>"; };
 		191EDCFA217F29540098640D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		191EDD05217F30BE0098640D /* AbstractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRepository.swift; sourceTree = "<group>"; };
+		1944179A2187AF8B0067EC55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
-		19E93B012180CB840031A3AA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		19EC352421873CFF00807FA2 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
 		19EE9B70218612B600F5FA42 /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
 		19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterTests.swift; sourceTree = "<group>"; };
 		19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractorTests.swift; sourceTree = "<group>"; };
-		5F35CC57B8F6F2549B2A85F4 /* Pods_EasyListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79088C43DEE459C1DA380634 /* Pods_EasyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BF22B9F873673EAF5812158 /* Pods-EasyListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyListTests/Pods-EasyListTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CE237DF280CDD6EB02A3EEA4 /* Pods-EasyList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyList.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyList/Pods-EasyList.release.xcconfig"; sourceTree = "<group>"; };
-		DFB2E5E98954A52C697CE218 /* Pods-EasyListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyListTests/Pods-EasyListTests.release.xcconfig"; sourceTree = "<group>"; };
-		E017514BA2EEA361A15E7207 /* Pods-EasyList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyList/Pods-EasyList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		191EDCDD217F29530098640D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1BB3B1EF5C7A5BEE8FA5A98A /* Pods_EasyList.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		191EDCF1217F29540098640D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CC66F52DBC14233F2D9823 /* Pods_EasyListTests.framework in Frameworks */,
+				19C8E4522187C46800CC506C /* Realm.framework in Frameworks */,
+				19C8E4532187C46800CC506C /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C8E4442187BBA800CC506C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */,
+				19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +114,10 @@
 		191EDCD7217F29530098640D = {
 			isa = PBXGroup;
 			children = (
-				19E93B012180CB840031A3AA /* Podfile */,
 				191EDCE2217F29530098640D /* EasyList */,
 				191EDCF7217F29540098640D /* EasyListTests */,
 				191EDCE1217F29530098640D /* Products */,
-				A920A89371B8F5263732C4A3 /* Pods */,
-				829B98E2B401C94551EDFB55 /* Frameworks */,
+				19C8E44B2187C2DF00CC506C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,29 +174,20 @@
 			isa = PBXGroup;
 			children = (
 				191EDCE7217F29530098640D /* Main.storyboard */,
+				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
+				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
 				190BEB22217F7E7D00BC5DF2 /* noteUseCase */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		829B98E2B401C94551EDFB55 /* Frameworks */ = {
+		19C8E44B2187C2DF00CC506C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79088C43DEE459C1DA380634 /* Pods_EasyList.framework */,
-				5F35CC57B8F6F2549B2A85F4 /* Pods_EasyListTests.framework */,
+				19C8E44D2187C2DF00CC506C /* Realm.framework */,
+				19C8E44C2187C2DF00CC506C /* RealmSwift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A920A89371B8F5263732C4A3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E017514BA2EEA361A15E7207 /* Pods-EasyList.debug.xcconfig */,
-				CE237DF280CDD6EB02A3EEA4 /* Pods-EasyList.release.xcconfig */,
-				8BF22B9F873673EAF5812158 /* Pods-EasyListTests.debug.xcconfig */,
-				DFB2E5E98954A52C697CE218 /* Pods-EasyListTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,11 +197,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 191EDCFD217F29540098640D /* Build configuration list for PBXNativeTarget "EasyList" */;
 			buildPhases = (
-				BEF4DAC8D404039096CF4C8B /* [CP] Check Pods Manifest.lock */,
 				191EDCDC217F29530098640D /* Sources */,
-				191EDCDD217F29530098640D /* Frameworks */,
 				191EDCDE217F29530098640D /* Resources */,
-				173B6B33C11E771929DF7C1D /* [CP] Embed Pods Frameworks */,
+				19C8E4402187B94D00CC506C /* Copy Frameworks */,
+				19C8E4442187BBA800CC506C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,7 +215,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 191EDD00217F29540098640D /* Build configuration list for PBXNativeTarget "EasyListTests" */;
 			buildPhases = (
-				66BC95C28E390E085F26B54E /* [CP] Check Pods Manifest.lock */,
 				191EDCF0217F29540098640D /* Sources */,
 				191EDCF1217F29540098640D /* Frameworks */,
 				191EDCF2217F29540098640D /* Resources */,
@@ -285,7 +274,6 @@
 			files = (
 				191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */,
 				191EDCEB217F29540098640D /* Assets.xcassets in Resources */,
-				19E93B022180CB840031A3AA /* Podfile in Resources */,
 				191EDCE9217F29530098640D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +288,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		173B6B33C11E771929DF7C1D /* [CP] Embed Pods Frameworks */ = {
+		19C8E4402187B94D00CC506C /* Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,65 +296,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EasyList/Pods-EasyList-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "Copy Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyList/Pods-EasyList-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66BC95C28E390E085F26B54E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyListTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BEF4DAC8D404039096CF4C8B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyList-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -381,6 +321,7 @@
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteViewController.swift in Sources */,
 				19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */,
+				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,
 				191EDCE4217F29530098640D /* AppDelegate.swift in Sources */,
 				19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */,
 			);
@@ -397,6 +338,7 @@
 				19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
 				19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */,
+				1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,20 +490,23 @@
 		};
 		191EDCFE217F29540098640D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E017514BA2EEA361A15E7207 /* Pods-EasyList.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aris.panagiotopoulos.EasyLists;
+				PRODUCT_BUNDLE_IDENTIFIER = aris.panagiotopoulos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -571,20 +516,23 @@
 		};
 		191EDCFF217F29540098640D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE237DF280CDD6EB02A3EEA4 /* Pods-EasyList.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aris.panagiotopoulos.EasyLists;
+				PRODUCT_BUNDLE_IDENTIFIER = aris.panagiotopoulos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -594,12 +542,15 @@
 		};
 		191EDD01217F29540098640D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BF22B9F873673EAF5812158 /* Pods-EasyListTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L32F2TJPQ4;
+				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,12 +567,15 @@
 		};
 		191EDD02217F29540098640D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFB2E5E98954A52C697CE218 /* Pods-EasyListTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L32F2TJPQ4;
+				DEVELOPMENT_TEAM = Y5C6E4A2PU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,6 +9,7 @@
 build/
 DerivedData/
 Pods/
+Carthage/Checkouts/
 
 ## Various settings
 *.pbxuser

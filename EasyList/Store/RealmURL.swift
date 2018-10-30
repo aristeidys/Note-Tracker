@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import EasyList
-import RealmSwift
+
 import Realm
 
 

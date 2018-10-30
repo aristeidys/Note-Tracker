@@ -1,6 +1,6 @@
 @testable import EasyList
 import XCTest
-import RealmSwift
+
 
 class NoteWorkerTests: RepositoryBaseTestCase
 {
