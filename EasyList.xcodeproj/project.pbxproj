@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED40218889E800B6426C /* NoteTableViewController.swift */; };
+		1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */; };
+		1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */; };
+		1906ED4721888D8300B6426C /* NoteTableInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */; };
+		1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED482188A15C00B6426C /* NoteCellView.swift */; };
 		190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB24217F804A00BC5DF2 /* NoteWorker.swift */; };
 		190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB26217F804A00BC5DF2 /* NoteModel.swift */; };
 		190BEB2D217F804A00BC5DF2 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB27217F804A00BC5DF2 /* NoteViewController.swift */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1906ED40218889E800B6426C /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewControllerTests.swift; sourceTree = "<group>"; };
+		1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractor.swift; sourceTree = "<group>"; };
+		1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractorTests.swift; sourceTree = "<group>"; };
+		1906ED482188A15C00B6426C /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
 		190BEB24217F804A00BC5DF2 /* NoteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWorker.swift; sourceTree = "<group>"; };
 		190BEB26217F804A00BC5DF2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		190BEB27217F804A00BC5DF2 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +108,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		190BEB22217F7E7D00BC5DF2 /* noteUseCase */ = {
+		1906ED3F2188897100B6426C /* noteTableUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				1906ED40218889E800B6426C /* NoteTableViewController.swift */,
+				1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */,
+				1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */,
+				1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */,
+				1906ED482188A15C00B6426C /* NoteCellView.swift */,
+			);
+			path = noteTableUseCase;
+			sourceTree = "<group>";
+		};
+		190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */ = {
 			isa = PBXGroup;
 			children = (
 				190BEB24217F804A00BC5DF2 /* NoteWorker.swift */,
@@ -112,7 +134,7 @@
 				19EE9B70218612B600F5FA42 /* NotePresenter.swift */,
 				19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */,
 			);
-			path = noteUseCase;
+			path = noteCreateUseCase;
 			sourceTree = "<group>";
 		};
 		191EDCD7217F29530098640D = {
@@ -181,7 +203,8 @@
 				191EDCE7217F29530098640D /* Main.storyboard */,
 				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
 				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
-				190BEB22217F7E7D00BC5DF2 /* noteUseCase */,
+				1906ED3F2188897100B6426C /* noteTableUseCase */,
+				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -330,13 +353,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */,
+				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
 				191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */,
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
 				19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteViewController.swift in Sources */,
 				19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */,
+				1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */,
 				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,
+				1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */,
 				191EDCE4217F29530098640D /* AppDelegate.swift in Sources */,
 				19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */,
 			);
@@ -349,12 +375,14 @@
 				19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */,
 				190BEB3B217F80CA00BC5DF2 /* NoteViewControllerTests.swift in Sources */,
 				19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */,
+				1906ED4721888D8300B6426C /* NoteTableInteractorTests.swift in Sources */,
 				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
 				19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */,
 				19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
 				19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */,
 				1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */,
+				1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,6 @@
 @testable import EasyList
 import XCTest
+import RealmSwift
 
 class NoteInteractorTests: XCTestCase {
    
@@ -42,6 +43,10 @@ class NoteInteractorTests: XCTestCase {
     }
     
     class NoteWorkerSpy: NoteRepositoryLogic {
+        
+        func getAll() -> Results<NoteModel>? {
+            return nil
+        }
         
         var createNoteCalled = false
         func createNote(title: String, text: String) {

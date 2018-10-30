@@ -3,6 +3,7 @@ import RealmSwift
 
 protocol NoteRepositoryLogic {
     func createNote(title: String, text: String)
+    func getAll() -> Results<NoteModel>?
 }
 
 class NoteWorker: AbstractRepository, NoteRepositoryLogic
@@ -16,7 +17,7 @@ class NoteWorker: AbstractRepository, NoteRepositoryLogic
         print("💾 Title: \(title) text: \(text)")
     }
     
-    func getAll() -> Results<NoteModel> {
+    func getAll() -> Results<NoteModel>? {
         return realm.objects(NoteModel.self)
     }
 }

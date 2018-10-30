@@ -39,11 +39,11 @@ class NoteWorkerTests: RepositoryBaseTestCase
         
         let allNotes = sut.getAll()
         
-        XCTAssertEqual(1, allNotes.count)
+        XCTAssertEqual(1, allNotes!.count)
         
         sut.createNote(title: "hello")
         
-        XCTAssertEqual(2, allNotes.count)
+        XCTAssertEqual(2, allNotes!.count)
     }
     
     
