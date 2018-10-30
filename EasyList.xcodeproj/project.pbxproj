@@ -33,7 +33,6 @@
 		19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E455218840E300CC506C /* UITextField+Extension.swift */; };
 		19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */; };
 		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
-		19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EC352421873CFF00807FA2 /* KeyboardViewController.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */; };
 		19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B70218612B600F5FA42 /* NotePresenter.swift */; };
 		19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */; };
@@ -79,7 +78,6 @@
 		19C8E455218840E300CC506C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionTests.swift; sourceTree = "<group>"; };
 		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
-		19EC352421873CFF00807FA2 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
 		19EE9B70218612B600F5FA42 /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
 		19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterTests.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				191EDCEA217F29540098640D /* Assets.xcassets */,
 				191EDCEC217F29540098640D /* LaunchScreen.storyboard */,
 				191EDCE3217F29530098640D /* AppDelegate.swift */,
-				19EC352421873CFF00807FA2 /* KeyboardViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,
 				1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */,
 				191EDCE4217F29530098640D /* AppDelegate.swift in Sources */,
-				19EC352521873CFF00807FA2 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

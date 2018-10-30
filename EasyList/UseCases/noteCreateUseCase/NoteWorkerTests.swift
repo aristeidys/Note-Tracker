@@ -54,5 +54,6 @@ class NoteWorkerTests: RepositoryBaseTestCase
         XCTAssertEqual(title, result.title)
         XCTAssertEqual(text, result.text)
         XCTAssertNotNil(result.id)
+        XCTAssertNotNil(result.editedDate)
     }
 }

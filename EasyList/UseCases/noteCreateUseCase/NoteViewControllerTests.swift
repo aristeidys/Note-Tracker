@@ -98,7 +98,6 @@ class NoteViewControllerTests: XCTestCase {
         sut.interactor = interactor
 
         _ = sut.view
-
     }
 }
 

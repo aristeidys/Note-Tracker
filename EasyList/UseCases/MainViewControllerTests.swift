@@ -3,18 +3,18 @@ import XCTest
 
 class MainViewControllerTests: XCTestCase {
     
+    let sut: MainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
     
-    func tests_viewDidLoad_sets_viewToMove() {
+    func test_viewDidLoad_sets_viewToMove() {
         
-        let sut = MainViewController()
         let constraint = NSLayoutConstraint()
         let view = UIView()
         sut.bottomConstraint = constraint
         sut.textFieldView = view
         
         _ = sut.view
-        XCTAssertNotNil(sut.bottomViewConstraint)
-        XCTAssertNotNil(sut.viewToMove)
-
+        XCTAssertNotNil(sut.bottomConstraint)
+        XCTAssertNotNil(sut.noteTableView)
+        XCTAssertNotNil(sut.textFieldView)
     }
 }

@@ -13,6 +13,7 @@ class NoteWorker: AbstractRepository, NoteRepositoryLogic
         let note = NoteModel(title: title)
         note.title = title
         note.text = text
+        note.editedDate = Date()
         save(entity: note)
         print("💾 Title: \(title) text: \(text)")
     }

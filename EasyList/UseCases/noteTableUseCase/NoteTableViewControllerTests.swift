@@ -6,8 +6,9 @@ class NoteTableViewControllerTests: XCTestCase {
     
     let sut = NoteTableViewController()
     let interactor = NoteTableInteractorSpy()
+    
     func test_viewDidLoad_loads_table() {
-        
+
         _ = sut.view
         XCTAssertNotNil(sut.tableView)
         XCTAssertNotNil(sut.tableView.delegate)

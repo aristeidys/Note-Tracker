@@ -7,13 +7,14 @@ protocol NoteControllerLogic {
     func onValidTextSubmitted()
 }
 
-class NoteViewController: KeyboardViewController, NoteControllerLogic, UITextFieldDelegate  {
+class NoteViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate  {
 
     
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    var reloadDelegate: ReloadTableDelegate?
     var interactor: NoteInteractorLogic = NoteInteractor()
     var presenter: NotePresenterLogic = NotePresenter()
     
@@ -32,6 +33,7 @@ class NoteViewController: KeyboardViewController, NoteControllerLogic, UITextFie
     
     @IBAction func onNoteSubmitted(_ sender: Any) {
         interactor.processText(textField.text)
+        reloadDelegate?.shouldReloadTable()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
