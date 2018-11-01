@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class NoteTableViewController: UITableViewController {
+class NoteTableViewController: UITableViewController, ReloadTableDelegate {
     
     var interactor: NoteTableInteractorLogic = NoteTableInteractor()
 
@@ -21,7 +21,7 @@ class NoteTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func reload() {
+    func shouldReloadTable() {
         tableView.reloadData()
         if let numOfRows = interactor.fetchDataSource()?.count {
             let indexPath = NSIndexPath(item: numOfRows - 1, section: 0)

@@ -67,9 +67,9 @@ class NoteCreateViewControllerTests: XCTestCase {
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         sut = storyboard.instantiateViewController(withIdentifier: "NoteCreateViewController") as? NoteCreateViewController
         
-        sut.interactor = interactor
-
         _ = sut.view
+        
+        sut.interactor = interactor
     }
 }
 
