@@ -16,7 +16,6 @@ class NoteViewController: UIViewController, NoteControllerLogic, UITextFieldDele
     
     var reloadDelegate: ReloadTableDelegate?
     var interactor: NoteInteractorLogic = NoteInteractor()
-    var presenter: NotePresenterLogic = NotePresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +23,10 @@ class NoteViewController: UIViewController, NoteControllerLogic, UITextFieldDele
         // Do Binding
         submitButton.setTitleColor(Colours.buttons, for: .normal)
         submitButton.setTitleColor(Colours.secondary, for: .highlighted)
-        interactor.presenter = presenter
-        presenter.controller = self
         textField.delegate = self
         
         // Present Something
-        textField.placeholder = presenter.getFieldPlaceholder()
+        textField.placeholder = "Create a Note..."
     }
     
     @IBAction func onNoteSubmitted(_ sender: Any) {

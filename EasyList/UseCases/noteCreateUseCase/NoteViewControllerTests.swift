@@ -4,29 +4,14 @@ import XCTest
 class NoteViewControllerTests: XCTestCase {
     
     var sut: NoteViewController!
-    let presenter = NotePresenterSpy()
     let interactor = NoteInteractorSpy()
 
     func test_noTextInitially() {
         XCTAssert(sut.textField.text == "")
     }
     
-    func test_viewDidLoad_triggers_presenter_presentPlaceholder() {
-        XCTAssert(sut.textField.placeholder == "thePlaceholder")
-    }
-    
     func test_viewDidLoad_setsFieldDelegate() {
         assert(sut.textField!.delegate === sut)
-    }
-    
-    func test_viewDidLoad_binds_interactor_presenter() {
-        XCTAssertNotNil(interactor.presenter)
-        let interactorPresenter = interactor.presenter as! NotePresenterSpy
-        XCTAssert(interactorPresenter === self.presenter)
-        
-        let presenterController = presenter.controller as! NoteViewController
-        
-        XCTAssert(presenterController === sut)
     }
     
     func test_onNoteSubmited_sendsText_to_Interactor() {
@@ -65,19 +50,7 @@ class NoteViewControllerTests: XCTestCase {
     
     //MARK: Spys
     
-    class NotePresenterSpy: NotePresenterLogic {
-        var controller: NoteControllerLogic?
-        
-        func getFieldPlaceholder() -> String {
-            return "thePlaceholder"
-        }
-        func validateText(_ text: String) {
-        //
-        }
-    }
-    
     class NoteInteractorSpy: NoteInteractorLogic {
-        var presenter: NotePresenterLogic?
 
         var noteText = "nil"
         func processText(_ quickText: String?) {
@@ -94,7 +67,6 @@ class NoteViewControllerTests: XCTestCase {
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         sut = storyboard.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController
         
-        sut.presenter = presenter
         sut.interactor = interactor
 
         _ = sut.view

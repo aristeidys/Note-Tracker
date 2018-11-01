@@ -6,40 +6,75 @@ class NoteInteractorTests: XCTestCase {
    
     let sut = NoteInteractor()
     let workerSpy = NoteWorkerSpy()
-    let presenterSpy = NotePresenterSpy()
     
     func test_interactor_has_worker() {
         XCTAssertNotNil(sut.worker)
     }
     
-    func test_processText_calls_workerAndPresenter() {
+    func test_processText_calls_worker() {
         
         sut.worker = workerSpy
-        sut.presenter = presenterSpy
 
         sut.processText( "call Worker")
         assert(workerSpy.createNoteCalled)
-        assert(presenterSpy.validateTextCalled)
     }
     
     func test_processText_doesnt_process_empty_text() {
         
         sut.worker = workerSpy
-        sut.presenter = presenterSpy
         
         sut.processText( "")
         XCTAssertFalse(workerSpy.createNoteCalled)
-        assert(presenterSpy.validateTextCalled)
     }
     
-    func test_processText_doesnt_call_workerAndPresenter() {
+    func test_processText_doesnt_call_worker() {
         
         sut.worker = workerSpy
-        sut.presenter = presenterSpy
         
         sut.processText(nil)
         XCTAssertFalse(workerSpy.createNoteCalled)
-        XCTAssertFalse(presenterSpy.validateTextCalled)
+    }
+    
+    func test_validateText_withoutText_returns_false() {
+        
+        let vc = NoteViewControllerSpy()
+        sut.viewController = vc
+        
+        // when
+        sut.processText("")
+        
+        // then
+        assert(vc.invalidCalled)
+    }
+    
+    func test_validateText_withText_returns_true() {
+        
+        let vc = NoteViewControllerSpy()
+        sut.viewController = vc
+        
+        // when
+        sut.processText("have text")
+        
+        // then
+        assert(vc.validCalled)
+    }
+    
+    // MARK: Spys
+    
+    class NoteViewControllerSpy: NoteControllerLogic {
+        var invalidCalled = false
+        
+        func onInvalidText() {
+            invalidCalled = true
+        }
+        
+        var validCalled = false
+        
+        func onValidTextSubmitted() {
+            validCalled = true
+        }
+        
+        
     }
     
     class NoteWorkerSpy: NoteRepositoryLogic {
@@ -51,19 +86,6 @@ class NoteInteractorTests: XCTestCase {
         var createNoteCalled = false
         func createNote(title: String, text: String) {
             createNoteCalled = true
-        }
-    }
-    
-    class NotePresenterSpy: NotePresenterLogic {
-        var controller: NoteControllerLogic?
-        var validateTextCalled = false
-        
-        func getFieldPlaceholder() -> String {
-            return ""
-        }
-        
-        func validateText(_ text: String) {
-            validateTextCalled = true
         }
     }
 }

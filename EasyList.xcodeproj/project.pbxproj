@@ -38,8 +38,6 @@
 		19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */; };
 		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */; };
-		19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B70218612B600F5FA42 /* NotePresenter.swift */; };
-		19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */; };
 		19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +85,6 @@
 		19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionTests.swift; sourceTree = "<group>"; };
 		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
-		19EE9B70218612B600F5FA42 /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
-		19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenterTests.swift; sourceTree = "<group>"; };
 		19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +134,6 @@
 				190BEB37217F80CA00BC5DF2 /* NoteViewControllerTests.swift */,
 				19EE9B6E21860E5600F5FA42 /* NoteInteractor.swift */,
 				19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */,
-				19EE9B70218612B600F5FA42 /* NotePresenter.swift */,
-				19EE9B7221861AF900F5FA42 /* NotePresenterTests.swift */,
 			);
 			path = noteCreateUseCase;
 			sourceTree = "<group>";
@@ -182,6 +176,16 @@
 			path = EasyListTests;
 			sourceTree = "<group>";
 		};
+		1998F667218B9B44004622F6 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				191EDCE7217F29530098640D /* Main.storyboard */,
+				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
+				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		1999E14F217F3CE10067962E /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,9 +211,7 @@
 		1999E156217F49C30067962E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				191EDCE7217F29530098640D /* Main.storyboard */,
-				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
-				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
+				1998F667218B9B44004622F6 /* base */,
 				1906ED3F2188897100B6426C /* noteTableUseCase */,
 				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
 			);
@@ -371,7 +373,6 @@
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
 				19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteViewController.swift in Sources */,
-				19EE9B71218612B600F5FA42 /* NotePresenter.swift in Sources */,
 				1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */,
 				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,
 				1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */,
@@ -389,7 +390,6 @@
 				1906ED4721888D8300B6426C /* NoteTableInteractorTests.swift in Sources */,
 				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
 				19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */,
-				19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
 				19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */,
 				1998F664218B1AD2004622F6 /* NoteTablePresenterTests.swift in Sources */,
