@@ -27,9 +27,8 @@
 		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
 		19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */; };
 		1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998F65F218B0E12004622F6 /* NoteCellView.xib */; };
-		1998F662218B1AC6004622F6 /* NoteTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */; };
-		1998F664218B1AD2004622F6 /* NoteTablePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */; };
 		1998F666218B2226004622F6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F665218B2226004622F6 /* Design.swift */; };
+		1998F66A218BAACB004622F6 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F669218BAACB004622F6 /* KeyboardHandler.swift */; };
 		19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
 		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
 		19C8E4522187C46800CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
@@ -38,7 +37,7 @@
 		19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */; };
 		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */; };
-		19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */; };
+		19EE9B7D218626EE00F5FA42 /* NoteCreateInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,16 +75,15 @@
 		1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
 		1998F65F218B0E12004622F6 /* NoteCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
-		1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTablePresenter.swift; sourceTree = "<group>"; };
-		1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTablePresenterTests.swift; sourceTree = "<group>"; };
 		1998F665218B2226004622F6 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		1998F669218BAACB004622F6 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		19C8E455218840E300CC506C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionTests.swift; sourceTree = "<group>"; };
 		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateInteractor.swift; sourceTree = "<group>"; };
-		19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractorTests.swift; sourceTree = "<group>"; };
+		19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +115,6 @@
 				1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */,
 				1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */,
 				1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */,
-				1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */,
-				1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */,
 			);
 			path = noteTableUseCase;
 			sourceTree = "<group>";
@@ -126,14 +122,10 @@
 		190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				190BEB24217F804A00BC5DF2 /* NoteWorker.swift */,
-				190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */,
-				190BEB26217F804A00BC5DF2 /* NoteModel.swift */,
-				19E93B032180D2DC0031A3AA /* NoteModeTests.swift */,
 				190BEB27217F804A00BC5DF2 /* NoteCreateViewController.swift */,
 				190BEB37217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift */,
 				19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */,
-				19EE9B7C218626EE00F5FA42 /* NoteInteractorTests.swift */,
+				19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */,
 			);
 			path = noteCreateUseCase;
 			sourceTree = "<group>";
@@ -186,6 +178,17 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		1998F668218BA735004622F6 /* noteStore */ = {
+			isa = PBXGroup;
+			children = (
+				190BEB24217F804A00BC5DF2 /* NoteWorker.swift */,
+				190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */,
+				190BEB26217F804A00BC5DF2 /* NoteModel.swift */,
+				19E93B032180D2DC0031A3AA /* NoteModeTests.swift */,
+			);
+			path = noteStore;
+			sourceTree = "<group>";
+		};
 		1999E14F217F3CE10067962E /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +207,7 @@
 				191EDCEC217F29540098640D /* LaunchScreen.storyboard */,
 				191EDCE3217F29530098640D /* AppDelegate.swift */,
 				1998F665218B2226004622F6 /* Design.swift */,
+				1998F669218BAACB004622F6 /* KeyboardHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 		1999E156217F49C30067962E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1998F668218BA735004622F6 /* noteStore */,
 				1998F667218B9B44004622F6 /* base */,
 				1906ED3F2188897100B6426C /* noteTableUseCase */,
 				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
@@ -367,10 +372,10 @@
 				19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */,
 				1998F666218B2226004622F6 /* Design.swift in Sources */,
 				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
-				1998F662218B1AC6004622F6 /* NoteTablePresenter.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
 				191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */,
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
+				1998F66A218BAACB004622F6 /* KeyboardHandler.swift in Sources */,
 				19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteCreateViewController.swift in Sources */,
 				1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */,
@@ -391,8 +396,7 @@
 				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
 				19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
-				19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */,
-				1998F664218B1AD2004622F6 /* NoteTablePresenterTests.swift in Sources */,
+				19EE9B7D218626EE00F5FA42 /* NoteCreateInteractorTests.swift in Sources */,
 				1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */,
 				1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */,
 			);
