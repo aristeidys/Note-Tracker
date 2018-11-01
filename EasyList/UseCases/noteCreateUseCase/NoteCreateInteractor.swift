@@ -1,10 +1,10 @@
 import Foundation
 
-protocol NoteInteractorLogic {
+protocol NoteCreateInteractorLogic {
     func processText(_ quickText: String?)
 }
 
-class NoteInteractor: NoteInteractorLogic {
+class NoteCreateInteractor: NoteCreateInteractorLogic {
     
     var worker: NoteRepositoryLogic = NoteWorker()
     var viewController: NoteControllerLogic?

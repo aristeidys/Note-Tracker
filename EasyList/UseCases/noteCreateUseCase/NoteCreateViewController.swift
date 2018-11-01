@@ -7,15 +7,13 @@ protocol NoteControllerLogic {
     func onValidTextSubmitted()
 }
 
-class NoteViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate  {
-
-    
+class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate  {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
     var reloadDelegate: ReloadTableDelegate?
-    var interactor: NoteInteractorLogic = NoteInteractor()
+    var interactor: NoteCreateInteractorLogic = NoteCreateInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()

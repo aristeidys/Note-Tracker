@@ -1,10 +1,10 @@
 @testable import EasyList
 import XCTest
 
-class NoteViewControllerTests: XCTestCase {
+class NoteCreateViewControllerTests: XCTestCase {
     
-    var sut: NoteViewController!
-    let interactor = NoteInteractorSpy()
+    var sut: NoteCreateViewController!
+    let interactor = NoteCreateInteractorSpy()
 
     func test_noTextInitially() {
         XCTAssert(sut.textField.text == "")
@@ -50,7 +50,7 @@ class NoteViewControllerTests: XCTestCase {
     
     //MARK: Spys
     
-    class NoteInteractorSpy: NoteInteractorLogic {
+    class NoteCreateInteractorSpy: NoteCreateInteractorLogic {
 
         var noteText = "nil"
         func processText(_ quickText: String?) {
@@ -65,7 +65,7 @@ class NoteViewControllerTests: XCTestCase {
         
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        sut = storyboard.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "NoteCreateViewController") as? NoteCreateViewController
         
         sut.interactor = interactor
 

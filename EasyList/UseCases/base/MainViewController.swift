@@ -12,7 +12,7 @@ class MainViewController: UIViewController, ReloadTableDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = self.children.filter{$0 is NoteViewController}.first as? NoteViewController
+        let vc = self.children.filter{$0 is NoteCreateViewController}.first as? NoteCreateViewController
         vc?.reloadDelegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)

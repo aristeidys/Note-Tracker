@@ -2,9 +2,9 @@
 import XCTest
 import RealmSwift
 
-class NoteInteractorTests: XCTestCase {
+class NoteCreateInteractorTests: XCTestCase {
    
-    let sut = NoteInteractor()
+    let sut = NoteCreateInteractor()
     let workerSpy = NoteWorkerSpy()
     
     func test_interactor_has_worker() {
@@ -37,7 +37,7 @@ class NoteInteractorTests: XCTestCase {
     
     func test_validateText_withoutText_returns_false() {
         
-        let vc = NoteViewControllerSpy()
+        let vc = NoteCreateViewControllerSpy()
         sut.viewController = vc
         
         // when
@@ -49,7 +49,7 @@ class NoteInteractorTests: XCTestCase {
     
     func test_validateText_withText_returns_true() {
         
-        let vc = NoteViewControllerSpy()
+        let vc = NoteCreateViewControllerSpy()
         sut.viewController = vc
         
         // when
@@ -61,7 +61,7 @@ class NoteInteractorTests: XCTestCase {
     
     // MARK: Spys
     
-    class NoteViewControllerSpy: NoteControllerLogic {
+    class NoteCreateViewControllerSpy: NoteControllerLogic {
         var invalidCalled = false
         
         func onInvalidText() {
