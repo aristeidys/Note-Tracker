@@ -13,6 +13,7 @@ class NoteTableViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView)
         XCTAssertNotNil(sut.tableView.delegate)
         XCTAssertNotNil(sut.tableView.dataSource)
+        XCTAssertNotNil(sut.tableView.dequeueReusableCell(withIdentifier: sut.cellId))
     }
     
     func test_viewDidLoad_loads_data() {

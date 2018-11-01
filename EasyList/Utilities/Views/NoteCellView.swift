@@ -1,0 +1,18 @@
+import UIKit
+
+class NoteCellView: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var view: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func setupView(_ entity: NoteModel) {
+        titleLabel.text = entity.title
+        descriptionLabel.text = entity.text
+        descriptionLabel.textColor = Colours.text
+    }
+}

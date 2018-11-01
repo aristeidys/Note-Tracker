@@ -12,7 +12,6 @@ class MainViewController: UIViewController, ReloadTableDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let vc = self.children.filter{$0 is NoteViewController}.first as? NoteViewController
         vc?.reloadDelegate = self
         
@@ -22,7 +21,7 @@ class MainViewController: UIViewController, ReloadTableDelegate {
     
     func shouldReloadTable() {
         let vc = self.children.filter{$0 is NoteTableViewController}.first as? NoteTableViewController
-        vc?.tableView.reloadData()
+        vc?.reload()
     }
     
     deinit {

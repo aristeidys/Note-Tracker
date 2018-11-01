@@ -22,7 +22,8 @@ class NoteViewController: UIViewController, NoteControllerLogic, UITextFieldDele
         super.viewDidLoad()
         
         // Do Binding
-        
+        submitButton.setTitleColor(Colours.buttons, for: .normal)
+        submitButton.setTitleColor(Colours.secondary, for: .highlighted)
         interactor.presenter = presenter
         presenter.controller = self
         textField.delegate = self

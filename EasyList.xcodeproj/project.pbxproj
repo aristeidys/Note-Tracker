@@ -26,6 +26,10 @@
 		1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */; };
 		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
 		19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */; };
+		1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998F65F218B0E12004622F6 /* NoteCellView.xib */; };
+		1998F662218B1AC6004622F6 /* NoteTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */; };
+		1998F664218B1AD2004622F6 /* NoteTablePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */; };
+		1998F666218B2226004622F6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F665218B2226004622F6 /* Design.swift */; };
 		19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
 		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
 		19C8E4522187C46800CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
@@ -73,6 +77,10 @@
 		1944179A2187AF8B0067EC55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
+		1998F65F218B0E12004622F6 /* NoteCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
+		1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTablePresenter.swift; sourceTree = "<group>"; };
+		1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTablePresenterTests.swift; sourceTree = "<group>"; };
+		1998F665218B2226004622F6 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		19C8E455218840E300CC506C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -113,7 +121,8 @@
 				1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */,
 				1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */,
 				1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */,
-				1906ED482188A15C00B6426C /* NoteCellView.swift */,
+				1998F661218B1AC6004622F6 /* NoteTablePresenter.swift */,
+				1998F663218B1AD2004622F6 /* NoteTablePresenterTests.swift */,
 			);
 			path = noteTableUseCase;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 				191EDCEA217F29540098640D /* Assets.xcassets */,
 				191EDCEC217F29540098640D /* LaunchScreen.storyboard */,
 				191EDCE3217F29530098640D /* AppDelegate.swift */,
+				1998F665218B2226004622F6 /* Design.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -218,6 +228,8 @@
 		19C8E4542188408300CC506C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1906ED482188A15C00B6426C /* NoteCellView.swift */,
+				1998F65F218B0E12004622F6 /* NoteCellView.xib */,
 				19C8E455218840E300CC506C /* UITextField+Extension.swift */,
 				19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */,
 			);
@@ -308,6 +320,7 @@
 			files = (
 				191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */,
 				191EDCEB217F29540098640D /* Assets.xcassets in Resources */,
+				1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */,
 				191EDCE9217F29530098640D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EE9B6F21860E5600F5FA42 /* NoteInteractor.swift in Sources */,
+				1998F666218B2226004622F6 /* Design.swift in Sources */,
 				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
+				1998F662218B1AC6004622F6 /* NoteTablePresenter.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
 				191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */,
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
@@ -377,6 +392,7 @@
 				19EE9B7421861B4000F5FA42 /* NotePresenterTests.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
 				19EE9B7D218626EE00F5FA42 /* NoteInteractorTests.swift in Sources */,
+				1998F664218B1AD2004622F6 /* NoteTablePresenterTests.swift in Sources */,
 				1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */,
 				1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */,
 			);
