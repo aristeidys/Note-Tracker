@@ -9,6 +9,10 @@ class NoteCreateInteractor: NoteCreateInteractorLogic {
     var worker: NoteRepositoryLogic = NoteWorker()
     var viewController: NoteControllerLogic?
     
+    init(_ vc: NoteControllerLogic) {
+        viewController = vc
+    }
+    
     func processText(_ quickText: String?) {
         guard let text = quickText else {
             return
@@ -22,10 +26,6 @@ class NoteCreateInteractor: NoteCreateInteractorLogic {
     }
     
     private func isTextValid(_ text: String) -> Bool {
-        if text == "" {
-            return false
-        } else {
-            return true
-        }
+        return  text == "" ? false : true
     }
 }

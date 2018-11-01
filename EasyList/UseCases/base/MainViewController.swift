@@ -1,35 +1,36 @@
 import UIKit
 
-protocol ReloadTableDelegate {
-    func shouldReloadTable()
+protocol ReloadDelegate {
+    func reload()
 }
-class MainViewController: KeyboardHandler, ReloadTableDelegate {
+class MainViewController: KeyboardHandler, ReloadDelegate {
     
     @IBOutlet weak var textFieldView: UIView!
     
     @IBOutlet weak var noteTableView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var noteTableSegue = "noteTableSegue"
-    var tableViewController: ReloadTableDelegate?
+    var tableViewController: ReloadDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad(noteTableView, bottomConstraint)
-        let vc = self.children.filter{$0 is NoteCreateViewController}.first as? NoteCreateViewController
-        vc?.reloadDelegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == noteTableSegue {
+        if segue.identifier == "noteTableSegue" {
             if let destination = segue.destination as? NoteTableViewController {
                 tableViewController = destination
+            }
+        } else if segue.identifier == "noteCreateSegue" {
+            if let destination = segue.destination as? NoteCreateViewController {
+                destination.reloadDelegate = self
             }
         }
     }
     
     
-    func shouldReloadTable() {
-        tableViewController?.shouldReloadTable()
+    func reload() {
+        tableViewController?.reload()
     }
     
     

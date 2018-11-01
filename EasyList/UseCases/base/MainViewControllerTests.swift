@@ -31,8 +31,17 @@ class MainViewControllerTests: XCTestCase {
         assert(sut.shouldReloadCalled)
     }
     
+    func test_should_embed_createViewcontroller() {
+        
+        _ = sut.view
+        
+        let helper = sut.children.filter{$0 is NoteCreateViewController}.first as? NoteCreateViewController
+        
+        XCTAssertNotNil(helper?.reloadDelegate)
+    }
     
-    func test_should_have_embedded_viewControllers() {
+    
+    func test_should_embed_noteTableviewController() {
         
         _ = sut.view
         
@@ -48,17 +57,17 @@ class MainViewControllerTests: XCTestCase {
         
         sut.tableViewController = helper
         
-        sut.shouldReloadTable()
+        sut.reload()
         
         assert(helper.shouldReloadCalled)
     }
     
     // MARK: Spies
-    class ReloadTableDelegateSpy: ReloadTableDelegate {
+    class ReloadTableDelegateSpy: ReloadDelegate {
         
         var shouldReloadCalled = false
         
-        func shouldReloadTable() {
+        func reload() {
             shouldReloadCalled = true
         }
     }

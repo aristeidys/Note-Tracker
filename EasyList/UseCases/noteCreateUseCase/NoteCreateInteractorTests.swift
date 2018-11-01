@@ -4,11 +4,18 @@ import RealmSwift
 
 class NoteCreateInteractorTests: XCTestCase {
    
-    let sut = NoteCreateInteractor()
+    let vc = NoteCreateViewControllerSpy()
+    var sut: NoteCreateInteractor!
     let workerSpy = NoteWorkerSpy()
     
-    func test_interactor_has_worker() {
+    override func setUp() {
+        super.setUp()
+        sut = NoteCreateInteractor(vc)
+    }
+    
+    func test_interactor_has_worker_and_controller() {
         XCTAssertNotNil(sut.worker)
+        XCTAssertNotNil(sut.viewController)
     }
     
     func test_processText_calls_worker() {
@@ -37,9 +44,6 @@ class NoteCreateInteractorTests: XCTestCase {
     
     func test_validateText_withoutText_returns_false() {
         
-        let vc = NoteCreateViewControllerSpy()
-        sut.viewController = vc
-        
         // when
         sut.processText("")
         
@@ -48,9 +52,6 @@ class NoteCreateInteractorTests: XCTestCase {
     }
     
     func test_validateText_withText_returns_true() {
-        
-        let vc = NoteCreateViewControllerSpy()
-        sut.viewController = vc
         
         // when
         sut.processText("have text")

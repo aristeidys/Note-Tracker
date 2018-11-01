@@ -12,7 +12,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
-    var reloadDelegate: ReloadTableDelegate?
+    var reloadDelegate: ReloadDelegate?
     var interactor: NoteCreateInteractorLogic?
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         submitButton.setTitleColor(Colours.buttons, for: .normal)
         submitButton.setTitleColor(Colours.secondary, for: .highlighted)
         textField.delegate = self
-        interactor = NoteCreateInteractor()
+        interactor = NoteCreateInteractor(self)
         
         // Present Something
         textField.placeholder = "Create a Note..."
@@ -30,7 +30,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     
     @IBAction func onNoteSubmitted(_ sender: Any) {
         interactor?.processText(textField.text)
-        reloadDelegate?.shouldReloadTable()
+        reloadDelegate?.reload()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -39,7 +39,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     }
     
     
-    //MARK: presenter callbacks
+    //MARK: callbacks
     func onValidTextSubmitted() {
         textField.text = ""
     }
