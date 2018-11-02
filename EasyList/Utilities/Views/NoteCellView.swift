@@ -14,5 +14,8 @@ class NoteCellView: UITableViewCell {
         titleLabel.text = entity.title
         descriptionLabel.text = entity.text
         descriptionLabel.textColor = Colours.text
+        
+        titleLabel.font = Fonts.bigBold
+        descriptionLabel.font = Fonts.primary
     }
 }

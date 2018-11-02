@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-fz-uIZ">
-                    <rect key="frame" x="0.0" y="0.0" width="374" height="182"/>
+                    <rect key="frame" x="0.0" y="10" width="374" height="162"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-nb-hLo">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
@@ -28,7 +28,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-P2-d4J">
-                            <rect key="frame" x="10" y="22" width="364" height="160"/>
+                            <rect key="frame" x="10" y="22" width="364" height="140"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -50,14 +50,14 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Tbt-fz-uIZ" secondAttribute="trailing" id="TK6-Zs-9hG"/>
                 <constraint firstItem="Tbt-fz-uIZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jah-lU-lXv"/>
-                <constraint firstItem="Tbt-fz-uIZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kGx-SO-oZ4"/>
-                <constraint firstAttribute="bottom" secondItem="Tbt-fz-uIZ" secondAttribute="bottom" id="vy5-cK-h2p"/>
+                <constraint firstItem="Tbt-fz-uIZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="kGx-SO-oZ4"/>
+                <constraint firstAttribute="bottom" secondItem="Tbt-fz-uIZ" secondAttribute="bottom" constant="10" id="vy5-cK-h2p"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="RlF-fF-au8"/>
             <connections>
-                <outlet property="descriptionLabel" destination="8q1-P2-d4J" id="39m-fj-M9A"/>
-                <outlet property="titleLabel" destination="a3N-nb-hLo" id="hn4-9c-q5g"/>
+                <outlet property="descriptionLabel" destination="8q1-P2-d4J" id="mig-nm-LRa"/>
+                <outlet property="titleLabel" destination="a3N-nb-hLo" id="v9F-uj-E8t"/>
                 <outlet property="view" destination="Tbt-fz-uIZ" id="9y9-RB-Fgy"/>
             </connections>
             <point key="canvasLocation" x="-219" y="-139"/>

@@ -22,6 +22,8 @@
 		191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCEC217F29540098640D /* LaunchScreen.storyboard */; };
 		191EDCF9217F29540098640D /* RealmURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCF8217F29540098640D /* RealmURL.swift */; };
 		191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDD05217F30BE0098640D /* AbstractRepository.swift */; };
+		192E8B1A218C603800736160 /* TYPEWR__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 192E8B19218C603800736160 /* TYPEWR__.TTF */; };
+		192E8B1C218C604200736160 /* TYPEWR_B.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 192E8B1B218C604200736160 /* TYPEWR_B.TTF */; };
 		1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179A2187AF8B0067EC55 /* MainViewController.swift */; };
 		1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */; };
 		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
@@ -71,6 +73,8 @@
 		191EDCF8217F29540098640D /* RealmURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmURL.swift; sourceTree = "<group>"; };
 		191EDCFA217F29540098640D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		191EDD05217F30BE0098640D /* AbstractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRepository.swift; sourceTree = "<group>"; };
+		192E8B19218C603800736160 /* TYPEWR__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = TYPEWR__.TTF; sourceTree = "<group>"; };
+		192E8B1B218C604200736160 /* TYPEWR_B.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = TYPEWR_B.TTF; sourceTree = "<group>"; };
 		1944179A2187AF8B0067EC55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		191EDCE2217F29530098640D /* EasyList */ = {
 			isa = PBXGroup;
 			children = (
+				191EDCE3217F29530098640D /* AppDelegate.swift */,
 				191EDCEF217F29540098640D /* Info.plist */,
 				1999E156217F49C30067962E /* UseCases */,
 				1999E155217F499E0067962E /* Utilities */,
@@ -166,6 +171,15 @@
 				191EDCFA217F29540098640D /* Info.plist */,
 			);
 			path = EasyListTests;
+			sourceTree = "<group>";
+		};
+		192E8B18218C601A00736160 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				192E8B1B218C604200736160 /* TYPEWR_B.TTF */,
+				192E8B19218C603800736160 /* TYPEWR__.TTF */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		1998F667218B9B44004622F6 /* base */ = {
@@ -202,10 +216,10 @@
 		1999E155217F499E0067962E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				192E8B18218C601A00736160 /* fonts */,
 				19C8E4542188408300CC506C /* Views */,
 				191EDCEA217F29540098640D /* Assets.xcassets */,
 				191EDCEC217F29540098640D /* LaunchScreen.storyboard */,
-				191EDCE3217F29530098640D /* AppDelegate.swift */,
 				1998F665218B2226004622F6 /* Design.swift */,
 				1998F669218BAACB004622F6 /* KeyboardHandler.swift */,
 			);
@@ -325,10 +339,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192E8B1C218C604200736160 /* TYPEWR_B.TTF in Resources */,
 				191EDCEE217F29540098640D /* LaunchScreen.storyboard in Resources */,
 				191EDCEB217F29540098640D /* Assets.xcassets in Resources */,
 				1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */,
 				191EDCE9217F29530098640D /* Main.storyboard in Resources */,
+				192E8B1A218C603800736160 /* TYPEWR__.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
