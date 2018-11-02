@@ -14,6 +14,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         data = interactor.fetchDataSource()
         let nib = UINib.init(nibName: cellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
+        tableView.separatorColor = Colours.secondary
     }
     
     override func viewDidAppear(_ animated: Bool) {

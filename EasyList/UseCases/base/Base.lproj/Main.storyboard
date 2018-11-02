@@ -20,6 +20,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
                                 <rect key="frame" x="20" y="25" width="335" height="587"/>
                                 <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iEQ-ch-Wyq" appends="YES" id="fRc-no-waS"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
@@ -52,6 +53,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYy-GR-Vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="iEQ-ch-Wyq">
+                    <connections>
+                        <action selector="onTableClick:" destination="gOc-Nd-IvL" id="XSW-hH-gec"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="808.79999999999995" y="109.29535232383809"/>
         </scene>

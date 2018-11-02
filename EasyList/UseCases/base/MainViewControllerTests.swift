@@ -62,6 +62,24 @@ class MainViewControllerTests: XCTestCase {
         assert(helper.shouldReloadCalled)
     }
     
+    func test_clickOn_Table_should_Close_keyboard() {
+        
+        let window = UIWindow.init()
+        
+        _ = sut.view
+        window.addSubview(sut.view)
+        
+        let helper = sut.children.filter{$0 is NoteCreateViewController}.first as? NoteCreateViewController
+        
+        helper!.textField.becomeFirstResponder()
+        
+        assert(helper!.textField.isFirstResponder)
+        
+        sut.onTableClick("any")
+        
+        XCTAssertFalse(helper!.textField.isFirstResponder)
+    }
+    
     // MARK: Spies
     class ReloadTableDelegateSpy: ReloadDelegate {
         

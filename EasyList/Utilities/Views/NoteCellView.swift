@@ -13,6 +13,8 @@ class NoteCellView: UITableViewCell {
     func setupView(_ entity: NoteModel) {
         titleLabel.text = entity.title
         descriptionLabel.text = entity.text
+        
+        titleLabel.textColor = Colours.secondary
         descriptionLabel.textColor = Colours.text
         
         titleLabel.font = Fonts.bigBold

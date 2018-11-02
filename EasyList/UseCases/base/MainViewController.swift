@@ -11,6 +11,7 @@ class MainViewController: KeyboardHandler, ReloadDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var tableViewController: ReloadDelegate?
+    var noteCreateViewController: NoteCreateViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad(noteTableView, bottomConstraint)
@@ -24,10 +25,13 @@ class MainViewController: KeyboardHandler, ReloadDelegate {
         } else if segue.identifier == "noteCreateSegue" {
             if let destination = segue.destination as? NoteCreateViewController {
                 destination.reloadDelegate = self
+                noteCreateViewController = destination
             }
         }
     }
-    
+    @IBAction func onTableClick(_ sender: Any) {
+        noteCreateViewController?.textField.resignFirstResponder()
+    }
     
     func reload() {
         tableViewController?.reload()
