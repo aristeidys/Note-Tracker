@@ -24,10 +24,14 @@ public class AbstractRepository: Repository {
         }
     }
     
-    internal func delete(entity: Object) {
+    internal func delete(entity: Object?) {
+        
+        guard let existingEntity = entity else {
+            return
+        }
         
         try! realm.write {
-            realm.delete(entity)
+            realm.delete(existingEntity)
         }
     }
 }

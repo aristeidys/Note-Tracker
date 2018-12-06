@@ -58,6 +58,16 @@ class NoteWorkerTests: RepositoryBaseTestCase
         XCTAssertEqual(0, allNotes2!.count)
     }
     
+    func test_noteWorker_should_not_delete_nil_Note() {
+        
+        sut.createNote(dummyNote)
+        
+        sut.deleteNote(nil)
+        let allNotes2 = sut.getAll()
+        
+        XCTAssertEqual(1, allNotes2!.count)
+    }
+    
     
     func noteShouldHave(title: String = "", text: String = "") {
         let queryResult = realm.objects(NoteModel.self)

@@ -16,13 +16,6 @@ class NoteTableViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView.dequeueReusableCell(withIdentifier: sut.cellId))
     }
     
-    func test_viewDidLoad_loads_data() {
-        sut.interactor = interactor
-        _ = sut.view
-        
-        assert(interactor.fetchDataSourceCalled)
-    }
-    
     class NoteTableInteractorSpy: NoteTableInteractorLogic {
         var worker: NoteRepositoryLogic = NoteWorker()
         

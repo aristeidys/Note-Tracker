@@ -15,7 +15,7 @@ class NoteWorker: AbstractRepository, NoteRepositoryLogic
         print("💾 Title: \(note.title) text: \(note.text)")
     }
     
-    func deleteNote(_ note: NoteModel) {
+    func deleteNote(_ note: NoteModel?) {
         delete(entity: note)
     }
     
