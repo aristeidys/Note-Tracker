@@ -118,6 +118,9 @@
 		1906ED3F2188897100B6426C /* noteTableUseCase */ = {
 			isa = PBXGroup;
 			children = (
+				191EDCE7217F29530098640D /* Main.storyboard */,
+				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
+				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
 				1906ED40218889E800B6426C /* NoteTableViewController.swift */,
 				1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */,
 				1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */,
@@ -185,16 +188,6 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		1998F667218B9B44004622F6 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				191EDCE7217F29530098640D /* Main.storyboard */,
-				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
-				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
 		1998F668218BA735004622F6 /* noteStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +202,7 @@
 		1999E14F217F3CE10067962E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				1998F668218BA735004622F6 /* noteStore */,
 				191EDD05217F30BE0098640D /* AbstractRepository.swift */,
 				19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */,
 				191EDCF8217F29540098640D /* RealmURL.swift */,
@@ -232,8 +226,6 @@
 		1999E156217F49C30067962E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				1998F668218BA735004622F6 /* noteStore */,
-				1998F667218B9B44004622F6 /* base */,
 				1906ED3F2188897100B6426C /* noteTableUseCase */,
 				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
 			);
