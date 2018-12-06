@@ -15,7 +15,7 @@ class NoteTableInteractorTests: XCTestCase {
     }
     
     class NoteWorkerSpy: NoteRepositoryLogic {
-        func createNote(title: String, text: String) {
+        func createNote(_ note: NoteModel) {
             
         }
         var getAllCalled = false

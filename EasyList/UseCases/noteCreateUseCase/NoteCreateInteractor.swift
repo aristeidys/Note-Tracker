@@ -1,7 +1,7 @@
 import Foundation
 
 protocol NoteCreateInteractorLogic {
-    func processText(_ quickText: String?)
+    func processNewNote(_ note: NoteModel)
 }
 
 class NoteCreateInteractor: NoteCreateInteractorLogic {
@@ -13,12 +13,10 @@ class NoteCreateInteractor: NoteCreateInteractorLogic {
         viewController = vc
     }
     
-    func processText(_ quickText: String?) {
-        guard let text = quickText else {
-            return
-        }
-        if isTextValid(text) {
-            worker.createNote(title: "", text: text)
+    func processNewNote(_ note: NoteModel) {
+
+        if isTextValid(note.text) {
+            worker.createNote(note)
             viewController?.onValidTextSubmitted()
         } else {
             viewController?.onInvalidText()

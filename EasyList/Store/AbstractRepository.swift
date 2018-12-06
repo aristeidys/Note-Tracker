@@ -23,4 +23,11 @@ public class AbstractRepository: Repository {
             realm.add(entity)
         }
     }
+    
+    internal func delete(entity: Object) {
+        
+        try! realm.write {
+            realm.delete(entity)
+        }
+    }
 }

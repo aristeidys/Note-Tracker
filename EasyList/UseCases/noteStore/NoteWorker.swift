@@ -2,20 +2,21 @@ import UIKit
 import RealmSwift
 
 protocol NoteRepositoryLogic {
-    func createNote(title: String, text: String)
+    func createNote(_ note: NoteModel)
     func getAll() -> Results<NoteModel>?
 }
 
 class NoteWorker: AbstractRepository, NoteRepositoryLogic
 {
     
-    func createNote(title: String = "", text: String = "") {
-        let note = NoteModel(title: title)
-        note.title = title
-        note.text = text
+    func createNote(_ note: NoteModel) {
         note.editedDate = Date()
         save(entity: note)
-        print("💾 Title: \(title) text: \(text)")
+        print("💾 Title: \(note.title) text: \(note.text)")
+    }
+    
+    func deleteNote(_ note: NoteModel) {
+        delete(entity: note)
     }
     
     func getAll() -> Results<NoteModel>? {

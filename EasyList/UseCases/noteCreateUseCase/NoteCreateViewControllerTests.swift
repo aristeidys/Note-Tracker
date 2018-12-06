@@ -53,10 +53,10 @@ class NoteCreateViewControllerTests: XCTestCase {
     class NoteCreateInteractorSpy: NoteCreateInteractorLogic {
 
         var noteText = "nil"
-        func processText(_ quickText: String?) {
-            if let text = quickText {
-                noteText = text
-            }
+        
+        func processNewNote(_ note: NoteModel) {
+            
+            noteText = note.text
         }
     }
     

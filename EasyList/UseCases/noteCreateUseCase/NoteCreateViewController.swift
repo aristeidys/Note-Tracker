@@ -29,7 +29,8 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     }
     
     @IBAction func onNoteSubmitted(_ sender: Any) {
-        interactor?.processText(textField.text)
+        let note = NoteModel(title: "", text: textField?.text ?? "")
+        interactor?.processNewNote(note)
         reloadDelegate?.reload()
     }
     

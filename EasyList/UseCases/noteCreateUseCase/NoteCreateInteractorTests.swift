@@ -22,7 +22,7 @@ class NoteCreateInteractorTests: XCTestCase {
         
         sut.worker = workerSpy
 
-        sut.processText( "call Worker")
+        sut.processNewNote(NoteModel(text: "call Worker"))
         assert(workerSpy.createNoteCalled)
     }
     
@@ -30,22 +30,14 @@ class NoteCreateInteractorTests: XCTestCase {
         
         sut.worker = workerSpy
         
-        sut.processText( "")
-        XCTAssertFalse(workerSpy.createNoteCalled)
-    }
-    
-    func test_processText_doesnt_call_worker() {
-        
-        sut.worker = workerSpy
-        
-        sut.processText(nil)
+        sut.processNewNote(NoteModel(text: ""))
         XCTAssertFalse(workerSpy.createNoteCalled)
     }
     
     func test_validateText_withoutText_returns_false() {
         
         // when
-        sut.processText("")
+        sut.processNewNote(NoteModel(text: ""))
         
         // then
         assert(vc.invalidCalled)
@@ -54,7 +46,7 @@ class NoteCreateInteractorTests: XCTestCase {
     func test_validateText_withText_returns_true() {
         
         // when
-        sut.processText("have text")
+        sut.processNewNote(NoteModel(text: "have text"))
         
         // then
         assert(vc.validCalled)
@@ -85,7 +77,7 @@ class NoteCreateInteractorTests: XCTestCase {
         }
         
         var createNoteCalled = false
-        func createNote(title: String, text: String) {
+        func createNote(_ note: NoteModel) {
             createNoteCalled = true
         }
     }
