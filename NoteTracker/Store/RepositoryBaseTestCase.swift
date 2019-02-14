@@ -1,6 +1,6 @@
 //
 //  RepositoryBaseTestCase.swift
-//  EasyListTests
+//  NoteTrackerTests
 //
 //  Created by Aristeidis Panagiotopoulos on 25/10/2018.
 //  Copyright © 2018 arisPanagiotopoulos. All rights reserved.

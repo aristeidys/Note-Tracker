@@ -1,6 +1,6 @@
 //
 //  CustomTextField.swift
-//  EasyList
+//  NoteTracker
 //
 //  Created by Aristeidis Panagiotopoulos on 30/10/2018.
 //  Copyright © 2018 arisPanagiotopoulos. All rights reserved.

@@ -1,13 +1,13 @@
 //
-//  EasyListTests.swift
-//  EasyListTests
+//  NoteTrackerTests.swift
+//  NoteTrackerTests
 //
 //  Created by Aristeidis Panagiotopoulos on 23/10/2018.
 //  Copyright © 2018 arisPanagiotopoulos. All rights reserved.
 //
 
 import XCTest
-@testable import EasyList
+@testable import NoteTracker
 
 import Realm
 

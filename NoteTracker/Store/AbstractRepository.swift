@@ -1,6 +1,6 @@
 //
 //  AbstractRepository.swift
-//  EasyList
+//  NoteTracker
 //
 //  Created by Aristeidis Panagiotopoulos on 23/10/2018.
 //  Copyright © 2018 arisPanagiotopoulos. All rights reserved.

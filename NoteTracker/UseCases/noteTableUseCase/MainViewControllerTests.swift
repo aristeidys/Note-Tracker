@@ -1,5 +1,5 @@
 import XCTest
-@testable import EasyList
+@testable import NoteTracker
 
 class MainViewControllerTests: XCTestCase {
     

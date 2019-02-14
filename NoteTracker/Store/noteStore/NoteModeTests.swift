@@ -1,4 +1,4 @@
-@testable import EasyList
+@testable import NoteTracker
 import XCTest
 
 class NoteModeTests: XCTestCase {
