@@ -18,6 +18,12 @@ class MainViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.textFieldView)
     }
     
+    func test_should_Have_Navigation_Bar_Title() {
+        _ = sut.view
+        
+        assert(sut.title == "Note Tracker")
+    }
+    
     func test_shouldReloadTable_called() {
         // setup
         let helper = NoteCreateViewController()

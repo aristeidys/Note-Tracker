@@ -15,6 +15,7 @@ class MainViewController: KeyboardHandler, ReloadDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad(noteTableView, bottomConstraint)
+        self.title = "Note Tracker"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

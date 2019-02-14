@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gOc-Nd-IvL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vcM-Vv-h7U">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,16 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CsR-Wn-Heo">
+            <objects>
+                <navigationController id="vcM-Vv-h7U" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hkq-z9-SYo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gOc-Nd-IvL" kind="relationship" relationship="rootViewController" id="fmG-yX-EIA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RsH-MR-Pq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="109"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="C9d-oB-LFd">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="gOc-Nd-IvL" customClass="MainViewController" customModule="EasyList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="gOc-Nd-IvL" customClass="MainViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U94-Qf-7Nw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
-                                <rect key="frame" x="20" y="25" width="335" height="587"/>
+                                <rect key="frame" x="20" y="69" width="335" height="543"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="iEQ-ch-Wyq" appends="YES" id="fRc-no-waS"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
@@ -46,6 +62,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iah-Jf-gSW"/>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="XXA-HB-OTN"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="N1o-qo-dA0" id="ePx-d1-j1U"/>
                         <outlet property="noteTableView" destination="b5t-zj-LRl" id="QpQ-4w-Ov1"/>
@@ -64,9 +82,9 @@
         <!--Note Table View Controller-->
         <scene sceneID="9mI-KG-QQp">
             <objects>
-                <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="EasyList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="587"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -83,7 +101,7 @@
         <!--Note Create View Controller-->
         <scene sceneID="qrw-5X-Thk">
             <objects>
-                <viewController storyboardIdentifier="NoteCreateViewController" id="dNL-nE-WDc" customClass="NoteCreateViewController" customModule="EasyList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteCreateViewController" id="dNL-nE-WDc" customClass="NoteCreateViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPA-tI-omz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
