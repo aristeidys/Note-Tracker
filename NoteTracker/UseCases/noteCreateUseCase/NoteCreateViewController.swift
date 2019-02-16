@@ -7,7 +7,7 @@ protocol NoteControllerLogic {
     func onValidTextSubmitted()
 }
 
-class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate, GesturesDelegate {
+class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!

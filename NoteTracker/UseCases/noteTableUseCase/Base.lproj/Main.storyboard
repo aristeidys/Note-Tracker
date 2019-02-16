@@ -34,14 +34,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
-                                <rect key="frame" x="20" y="69" width="335" height="538"/>
+                                <rect key="frame" x="5" y="69" width="365" height="538"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkx-ba-AZ3">
-                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <rect key="frame" x="5" y="612" width="365" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="q6V-DV-sdI"/>
                                 </constraints>
@@ -54,11 +54,11 @@
                         <constraints>
                             <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" id="N1o-qo-dA0"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="top" secondItem="Iah-Jf-gSW" secondAttribute="top" constant="5" id="O87-Qv-uz6"/>
-                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="b5t-zj-LRl" secondAttribute="trailing" constant="20" id="Sln-PK-uFY"/>
-                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" id="VRE-sn-hBH"/>
+                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="b5t-zj-LRl" secondAttribute="trailing" constant="5" id="Sln-PK-uFY"/>
                             <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="5" id="Y0D-dE-Hr8"/>
-                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="Bkx-ba-AZ3" secondAttribute="trailing" id="oC3-5i-Hbt"/>
-                            <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" constant="20" id="sjL-xC-yoc"/>
+                            <constraint firstItem="b5t-zj-LRl" firstAttribute="trailing" secondItem="Bkx-ba-AZ3" secondAttribute="trailing" id="jRZ-xb-wi7"/>
+                            <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Bkx-ba-AZ3" secondAttribute="leading" id="krM-ww-PPW"/>
+                            <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" constant="5" id="sjL-xC-yoc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iah-Jf-gSW"/>
                     </view>
@@ -85,7 +85,7 @@
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="538"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="538"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -104,11 +104,11 @@
             <objects>
                 <viewController storyboardIdentifier="NoteCreateViewController" id="dNL-nE-WDc" customClass="NoteCreateViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPA-tI-omz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="55"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-AE-GVu">
-                                <rect key="frame" x="321" y="3" width="44" height="44"/>
+                                <rect key="frame" x="311" y="3" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="j3e-u4-MbJ"/>
@@ -132,10 +132,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-pS-IMs">
-                                <rect key="frame" x="51" y="-30" width="260" height="75"/>
+                                <rect key="frame" x="51" y="-30" width="250" height="75"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jAd-4P-ESZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
                                         <color key="backgroundColor" red="0.74740492270000003" green="0.84142230309999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DmT-D9-biO"/>
@@ -145,7 +145,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a Note..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-c3-BXL" userLabel="Description Text Field">
-                                        <rect key="frame" x="0.0" y="35" width="260" height="40"/>
+                                        <rect key="frame" x="0.0" y="35" width="250" height="40"/>
                                         <color key="backgroundColor" red="0.74740492268050684" green="0.84142230308219179" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4ne-Kj-8LI"/>

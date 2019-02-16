@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="10" width="374" height="162"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-nb-hLo">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                            <rect key="frame" x="10" y="0.0" width="364" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="avt-fc-50G"/>
                             </constraints>
@@ -28,7 +28,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember to buy the tomatoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-P2-d4J">
-                            <rect key="frame" x="10" y="22" width="353" height="120"/>
+                            <rect key="frame" x="10" y="32" width="353" height="110"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -53,18 +53,18 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="KBc-De-2zd" secondAttribute="trailing" id="2AT-v1-NPM"/>
-                        <constraint firstItem="a3N-nb-hLo" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" id="5Kg-Yy-uDq"/>
                         <constraint firstAttribute="trailing" secondItem="a3N-nb-hLo" secondAttribute="trailing" id="Akr-sk-7mh"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" constant="10" id="GAi-Ox-Uhl"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Hqv-SE-4cP"/>
                         <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="8q1-P2-d4J" secondAttribute="trailing" constant="10" id="JaZ-PK-9PY"/>
+                        <constraint firstItem="8q1-P2-d4J" firstAttribute="leading" secondItem="a3N-nb-hLo" secondAttribute="leading" id="Ofv-7i-lB4"/>
                         <constraint firstAttribute="bottom" secondItem="fOf-bW-vtt" secondAttribute="bottom" id="dZB-ri-gYf"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="top" secondItem="8q1-P2-d4J" secondAttribute="bottom" id="eau-Qb-RND"/>
                         <constraint firstItem="KBc-De-2zd" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="efx-rS-xY5"/>
-                        <constraint firstItem="8q1-P2-d4J" firstAttribute="top" secondItem="a3N-nb-hLo" secondAttribute="bottom" id="fHb-YH-gDh"/>
+                        <constraint firstItem="8q1-P2-d4J" firstAttribute="top" secondItem="a3N-nb-hLo" secondAttribute="bottom" constant="10" id="fHb-YH-gDh"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" id="gRg-Nf-8fE"/>
+                        <constraint firstItem="fOf-bW-vtt" firstAttribute="trailing" secondItem="8q1-P2-d4J" secondAttribute="trailing" id="lTU-5s-9Ub"/>
                         <constraint firstAttribute="bottom" secondItem="KBc-De-2zd" secondAttribute="bottom" id="s6H-BL-6j1"/>
-                        <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="fOf-bW-vtt" secondAttribute="trailing" constant="10" id="v0S-ug-7jW"/>
                         <constraint firstItem="a3N-nb-hLo" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="yis-Pu-PhZ"/>
                     </constraints>
                 </view>
