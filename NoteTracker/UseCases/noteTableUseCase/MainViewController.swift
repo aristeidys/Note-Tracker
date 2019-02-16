@@ -31,9 +31,7 @@ class MainViewController: KeyboardHandler, ReloadDelegate {
         }
     }
     @IBAction func onTableClick(_ sender: Any) {
-        noteCreateViewController?.descTextField.resignFirstResponder()
-        noteCreateViewController?.titleTextField.resignFirstResponder()
-
+        noteCreateViewController?.collapse()
     }
     
     func reload() {

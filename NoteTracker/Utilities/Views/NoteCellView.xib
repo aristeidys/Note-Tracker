@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoteCellView" customModule="EasyList" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoteCellView" customModule="NoteTracker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="182"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,13 +28,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember to buy the tomatoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-P2-d4J">
-                            <rect key="frame" x="10" y="22" width="364" height="120"/>
+                            <rect key="frame" x="10" y="22" width="353" height="120"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOf-bW-vtt">
-                            <rect key="frame" x="0.0" y="142" width="374" height="20"/>
+                            <rect key="frame" x="0.0" y="142" width="363" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="9by-D0-koi"/>
                             </constraints>
@@ -42,19 +42,29 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-De-2zd" userLabel="Delete Indicator">
+                            <rect key="frame" x="373" y="0.0" width="1" height="162"/>
+                            <color key="backgroundColor" red="1" green="0.1118306135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="rkN-Jx-tpI"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KBc-De-2zd" secondAttribute="trailing" id="2AT-v1-NPM"/>
                         <constraint firstItem="a3N-nb-hLo" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" id="5Kg-Yy-uDq"/>
                         <constraint firstAttribute="trailing" secondItem="a3N-nb-hLo" secondAttribute="trailing" id="Akr-sk-7mh"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" constant="10" id="GAi-Ox-Uhl"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Hqv-SE-4cP"/>
-                        <constraint firstAttribute="trailing" secondItem="8q1-P2-d4J" secondAttribute="trailing" id="OJn-fc-nBV"/>
+                        <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="8q1-P2-d4J" secondAttribute="trailing" constant="10" id="JaZ-PK-9PY"/>
                         <constraint firstAttribute="bottom" secondItem="fOf-bW-vtt" secondAttribute="bottom" id="dZB-ri-gYf"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="top" secondItem="8q1-P2-d4J" secondAttribute="bottom" id="eau-Qb-RND"/>
+                        <constraint firstItem="KBc-De-2zd" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="efx-rS-xY5"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="top" secondItem="a3N-nb-hLo" secondAttribute="bottom" id="fHb-YH-gDh"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" id="gRg-Nf-8fE"/>
-                        <constraint firstAttribute="trailing" secondItem="fOf-bW-vtt" secondAttribute="trailing" id="i0o-6v-29g"/>
+                        <constraint firstAttribute="bottom" secondItem="KBc-De-2zd" secondAttribute="bottom" id="s6H-BL-6j1"/>
+                        <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="fOf-bW-vtt" secondAttribute="trailing" constant="10" id="v0S-ug-7jW"/>
                         <constraint firstItem="a3N-nb-hLo" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="yis-Pu-PhZ"/>
                     </constraints>
                 </view>

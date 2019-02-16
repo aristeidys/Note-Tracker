@@ -25,6 +25,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         descTextField.delegate = self
         titleTextField.delegate = self
         interactor = NoteCreateInteractor(self)
+        titleTextField.isHidden = true
     }
     
     @IBAction func onNoteSubmitted(_ sender: Any) {
@@ -35,6 +36,12 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBAction func onMoreClicked(_ sender: Any) {
         
         titleTextField.isHidden = !titleTextField.isHidden
+    }
+    
+    func collapse() {
+        self.descTextField.resignFirstResponder()
+        self.titleTextField.resignFirstResponder()
+        self.titleTextField.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

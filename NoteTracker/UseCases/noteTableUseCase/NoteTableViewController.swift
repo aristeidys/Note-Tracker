@@ -44,10 +44,12 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         return interactor.fetchDataSource()?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            NoteWorker().deleteNote(data?[indexPath.row])
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "\u{267A}\n Delete") { action, index in
+            NoteWorker().deleteNote(self.data?[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+
+        return [delete]
     }
 }
