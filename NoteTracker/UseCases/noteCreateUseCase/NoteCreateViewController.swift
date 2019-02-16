@@ -9,7 +9,8 @@ protocol NoteControllerLogic {
 
 class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate  {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
     var reloadDelegate: ReloadDelegate?
@@ -21,31 +22,38 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         // Do Binding
         submitButton.setTitleColor(Colours.buttons, for: .normal)
         submitButton.setTitleColor(Colours.secondary, for: .highlighted)
-        textField.delegate = self
+        descTextField.delegate = self
+        titleTextField.delegate = self
         interactor = NoteCreateInteractor(self)
-        
-        // Present Something
-        textField.placeholder = "Create a Note..."
     }
     
     @IBAction func onNoteSubmitted(_ sender: Any) {
-        let note = NoteModel(title: "", text: textField?.text ?? "")
+        let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
         interactor?.processNewNote(note)
         reloadDelegate?.reload()
     }
+    @IBAction func onMoreClicked(_ sender: Any) {
+        
+        titleTextField.isHidden = !titleTextField.isHidden
+    }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        self.textField.showValid()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        onNoteSubmitted("")
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.descTextField.showValid()
+        return true
+    }
     
     //MARK: callbacks
     func onValidTextSubmitted() {
-        textField.text = ""
+        descTextField.text = ""
+        titleTextField.text = ""
     }
     
     func onInvalidText() {
-        textField.showInvalid()
+        descTextField.showInvalid()
     }
 }
