@@ -12,6 +12,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+    var delegate: AdjustHeightDelegate?
     
     var reloadDelegate: ReloadDelegate?
     var interactor: NoteCreateInteractorLogic?
@@ -34,14 +35,15 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         reloadDelegate?.reload()
     }
     @IBAction func onMoreClicked(_ sender: Any) {
-        
         titleTextField.isHidden = !titleTextField.isHidden
+        delegate?.expand(!titleTextField.isHidden)
     }
     
     func collapse() {
         self.descTextField.resignFirstResponder()
         self.titleTextField.resignFirstResponder()
         self.titleTextField.isHidden = true
+        delegate?.expand(false)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -63,4 +65,8 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     func onInvalidText() {
         descTextField.showInvalid()
     }
+}
+
+protocol AdjustHeightDelegate {
+    func expand(_ expand: Bool)
 }
