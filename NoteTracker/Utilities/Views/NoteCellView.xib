@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-fz-uIZ">
-                    <rect key="frame" x="0.0" y="10" width="374" height="162"/>
+                    <rect key="frame" x="0.0" y="10" width="373" height="162"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-nb-hLo">
-                            <rect key="frame" x="10" y="0.0" width="364" height="22"/>
+                            <rect key="frame" x="10" y="0.0" width="353" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="avt-fc-50G"/>
                             </constraints>
@@ -42,37 +42,37 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-De-2zd" userLabel="Delete Indicator">
-                            <rect key="frame" x="373" y="0.0" width="1" height="162"/>
-                            <color key="backgroundColor" red="1" green="0.1118306135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="1" id="rkN-Jx-tpI"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="KBc-De-2zd" secondAttribute="trailing" id="2AT-v1-NPM"/>
-                        <constraint firstAttribute="trailing" secondItem="a3N-nb-hLo" secondAttribute="trailing" id="Akr-sk-7mh"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" constant="10" id="GAi-Ox-Uhl"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Hqv-SE-4cP"/>
-                        <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="8q1-P2-d4J" secondAttribute="trailing" constant="10" id="JaZ-PK-9PY"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="leading" secondItem="a3N-nb-hLo" secondAttribute="leading" id="Ofv-7i-lB4"/>
                         <constraint firstAttribute="bottom" secondItem="fOf-bW-vtt" secondAttribute="bottom" id="dZB-ri-gYf"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="top" secondItem="8q1-P2-d4J" secondAttribute="bottom" id="eau-Qb-RND"/>
-                        <constraint firstItem="KBc-De-2zd" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="efx-rS-xY5"/>
                         <constraint firstItem="8q1-P2-d4J" firstAttribute="top" secondItem="a3N-nb-hLo" secondAttribute="bottom" constant="10" id="fHb-YH-gDh"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="leading" id="gRg-Nf-8fE"/>
                         <constraint firstItem="fOf-bW-vtt" firstAttribute="trailing" secondItem="8q1-P2-d4J" secondAttribute="trailing" id="lTU-5s-9Ub"/>
-                        <constraint firstAttribute="bottom" secondItem="KBc-De-2zd" secondAttribute="bottom" id="s6H-BL-6j1"/>
+                        <constraint firstAttribute="trailing" secondItem="8q1-P2-d4J" secondAttribute="trailing" constant="10" id="qIc-2O-7yZ"/>
+                        <constraint firstItem="a3N-nb-hLo" firstAttribute="trailing" secondItem="8q1-P2-d4J" secondAttribute="trailing" id="y1s-rp-ug4"/>
                         <constraint firstItem="a3N-nb-hLo" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="yis-Pu-PhZ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-De-2zd" userLabel="Delete Indicator">
+                    <rect key="frame" x="373" y="1" width="1" height="180"/>
+                    <color key="backgroundColor" red="1" green="0.1118306135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="rkN-Jx-tpI"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Tbt-fz-uIZ" secondAttribute="trailing" id="TK6-Zs-9hG"/>
+                <constraint firstItem="RlF-fF-au8" firstAttribute="trailing" secondItem="KBc-De-2zd" secondAttribute="trailing" id="PNI-Io-wDx"/>
+                <constraint firstItem="KBc-De-2zd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Qnj-Lj-JKp"/>
+                <constraint firstAttribute="bottom" secondItem="KBc-De-2zd" secondAttribute="bottom" constant="1" id="dne-HL-r2a"/>
                 <constraint firstItem="Tbt-fz-uIZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jah-lU-lXv"/>
                 <constraint firstItem="Tbt-fz-uIZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="kGx-SO-oZ4"/>
+                <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="trailing" id="m83-Rx-7vg"/>
                 <constraint firstAttribute="bottom" secondItem="Tbt-fz-uIZ" secondAttribute="bottom" constant="10" id="vy5-cK-h2p"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

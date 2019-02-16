@@ -25,6 +25,10 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
         self.title = "Note Tracker"
         noteCreateViewController?.delegate = self
         tableViewController?.gesturesDelegate = self
+        textFieldView.layer.cornerRadius = 7;
+        textFieldView.layer.masksToBounds = true;
+        noteTableView.layer.cornerRadius = 7;
+        noteTableView.layer.masksToBounds = true;
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,9 +59,9 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
     func expand(_ expand: Bool) {
         UIView.animate(withDuration: 1.5) {
             if expand {
-                self.createContainerHeight.constant = 90
+                self.createContainerHeight.constant = 95
             } else {
-                self.createContainerHeight.constant = 55
+                self.createContainerHeight.constant = 60
             }
         }
         

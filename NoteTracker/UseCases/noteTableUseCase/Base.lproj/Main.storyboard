@@ -34,28 +34,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
-                                <rect key="frame" x="5" y="69" width="365" height="538"/>
+                                <rect key="frame" x="5" y="69" width="365" height="531"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkx-ba-AZ3">
-                                <rect key="frame" x="5" y="612" width="365" height="55"/>
+                                <rect key="frame" x="5" y="602" width="365" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="q6V-DV-sdI"/>
+                                    <constraint firstAttribute="height" constant="60" id="q6V-DV-sdI"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="dNL-nE-WDc" kind="embed" identifier="noteCreateSegue" id="El4-6K-e8U"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.85460291749934858" green="0.85460291749934858" blue="0.85460291749934858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" id="N1o-qo-dA0"/>
+                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" constant="5" id="N1o-qo-dA0"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="top" secondItem="Iah-Jf-gSW" secondAttribute="top" constant="5" id="O87-Qv-uz6"/>
                             <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="b5t-zj-LRl" secondAttribute="trailing" constant="5" id="Sln-PK-uFY"/>
-                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="5" id="Y0D-dE-Hr8"/>
+                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="2" id="Y0D-dE-Hr8"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="trailing" secondItem="Bkx-ba-AZ3" secondAttribute="trailing" id="jRZ-xb-wi7"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Bkx-ba-AZ3" secondAttribute="leading" id="krM-ww-PPW"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" constant="5" id="sjL-xC-yoc"/>
@@ -84,11 +84,12 @@
         <scene sceneID="9mI-KG-QQp">
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="538"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="531"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="xve-rj-EVz" id="q1A-xD-z3a"/>
                             <outlet property="delegate" destination="xve-rj-EVz" id="uah-Mq-Nbs"/>
@@ -104,11 +105,11 @@
             <objects>
                 <viewController storyboardIdentifier="NoteCreateViewController" id="dNL-nE-WDc" customClass="NoteCreateViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPA-tI-omz">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="55"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-AE-GVu">
-                                <rect key="frame" x="311" y="3" width="44" height="44"/>
+                                <rect key="frame" x="311" y="8" width="44" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="j3e-u4-MbJ"/>
@@ -122,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28e-Pl-Iak" userLabel="More Button">
-                                <rect key="frame" x="10" y="9.5" width="31" height="31"/>
+                                <rect key="frame" x="10" y="14.5" width="31" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="S0w-UG-Sqc"/>
                                     <constraint firstAttribute="height" constant="31" id="y0Z-I9-PKu"/>
@@ -132,7 +133,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-pS-IMs">
-                                <rect key="frame" x="51" y="-30" width="250" height="75"/>
+                                <rect key="frame" x="51" y="-25" width="250" height="75"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jAd-4P-ESZ">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
