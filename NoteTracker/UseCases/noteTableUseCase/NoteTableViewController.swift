@@ -58,10 +58,21 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .default, title: "\u{267A}\n Delete") { action, index in
-            NoteWorker().deleteNote(self.data?[indexPath.row])
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let alert = UIAlertController.init(title: "Are you sure?", message: "This action cannot be undone.", preferredStyle: .actionSheet)
+            let continueAction = UIAlertAction.init(title: "Continue", style: .destructive, handler: {(action) in  self.deleteNote(indexPath: indexPath) } )
+            let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: {(action) in } )
+            alert.addAction(continueAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
         }
-
+        
         return [delete]
+    }
+    
+    func deleteNote(indexPath: IndexPath) {
+        NoteWorker().deleteNote(self.data?[indexPath.row])
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        reload()
     }
 }
