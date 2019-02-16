@@ -6,7 +6,6 @@
 <p>Technologies Used</p>
 
 <ul>
-  <li>Carthage (Package Manager)</li>
   <li>Realm Database</li>
   <li>Carthage Package Manager</li>
 </ul>
