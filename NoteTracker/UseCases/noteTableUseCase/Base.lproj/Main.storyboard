@@ -36,9 +36,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
                                 <rect key="frame" x="20" y="69" width="335" height="538"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="iEQ-ch-Wyq" appends="YES" id="fRc-no-waS"/>
-                                    <outletCollection property="gestureRecognizers" destination="ZVl-v5-i6U" appends="YES" id="PL0-Ve-44u"/>
-                                    <outletCollection property="gestureRecognizers" destination="0uk-gm-7mT" appends="YES" id="Ym4-vn-gfE"/>
+                                    <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
@@ -74,19 +72,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYy-GR-Vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="0uk-gm-7mT">
+                <tapGestureRecognizer id="5Dr-ix-nYH">
                     <connections>
-                        <action selector="onTableSwipe:" destination="gOc-Nd-IvL" id="m86-9w-OBu"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="ZVl-v5-i6U">
-                    <connections>
-                        <action selector="onTablePan:" destination="gOc-Nd-IvL" id="Wnr-2R-ilv"/>
-                    </connections>
-                </panGestureRecognizer>
-                <tapGestureRecognizer id="iEQ-ch-Wyq">
-                    <connections>
-                        <action selector="onTableClick:" destination="gOc-Nd-IvL" id="XSW-hH-gec"/>
+                        <action selector="onTableTap:" destination="gOc-Nd-IvL" id="fRs-XO-hlI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -146,7 +134,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-pS-IMs">
                                 <rect key="frame" x="51" y="-30" width="260" height="75"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&quot;Enter title...&quot;" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jAd-4P-ESZ">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jAd-4P-ESZ">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
                                         <color key="backgroundColor" red="0.74740492270000003" green="0.84142230309999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -156,7 +144,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&quot;Create a Note...&quot;" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-c3-BXL" userLabel="Description Text Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a Note..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-c3-BXL" userLabel="Description Text Field">
                                         <rect key="frame" x="0.0" y="35" width="260" height="40"/>
                                         <color key="backgroundColor" red="0.74740492268050684" green="0.84142230308219179" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

@@ -3,7 +3,12 @@ import UIKit
 protocol ReloadDelegate {
     func reload()
 }
-class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate {
+
+protocol CollapseCreateDelegate {
+    func collapseCreateViewController()
+}
+
+class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate, CollapseCreateDelegate {
     
     @IBOutlet weak var textFieldView: UIView!
     
@@ -12,13 +17,14 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate 
     
     @IBOutlet weak var createContainerHeight: NSLayoutConstraint!
     
-    var tableViewController: ReloadDelegate?
+    var tableViewController: NoteTableViewController?
     var noteCreateViewController: NoteCreateViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad(noteTableView, bottomConstraint)
         self.title = "Note Tracker"
         noteCreateViewController?.delegate = self
+        tableViewController?.gesturesDelegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,18 +39,17 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate 
             }
         }
     }
-    @IBAction func onTableClick(_ sender: Any) {
-        noteCreateViewController?.collapse()
-    }
-    @IBAction func onTablePan(_ sender: Any) {
-        noteCreateViewController?.collapse()
-    }
-    @IBAction func onTableSwipe(_ sender: Any) {
-        noteCreateViewController?.collapse()
-    }
     
     func reload() {
         tableViewController?.reload()
+    }
+    
+    @IBAction func onTableTap(_ sender: Any) {
+        collapseCreateViewController()
+    }
+    
+    func collapseCreateViewController() {
+        noteCreateViewController?.collapse()
     }
     
     func expand(_ expand: Bool) {

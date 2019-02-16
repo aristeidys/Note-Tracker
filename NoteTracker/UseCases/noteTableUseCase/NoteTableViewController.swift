@@ -7,6 +7,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
 
     var data: Results<NoteModel>?
     var cellId = "NoteCellView"
+    var gesturesDelegate: CollapseCreateDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +16,22 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         let nib = UINib.init(nibName: cellId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
         tableView.separatorColor = Colours.secondary
+        setupGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
+    }
+    
+    func setupGestures() {
+        tableView.gestureRecognizers?.forEach({ (gesture) in
+            gesture.addTarget(self, action: #selector(customSelector))
+        })
+    }
+    
+    @objc func customSelector() {
+        gesturesDelegate.collapseCreateViewController()
     }
     
     func reload() {

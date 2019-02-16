@@ -7,7 +7,7 @@ protocol NoteControllerLogic {
     func onValidTextSubmitted()
 }
 
-class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate  {
+class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate, GesturesDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
@@ -37,6 +37,10 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBAction func onMoreClicked(_ sender: Any) {
         titleTextField.isHidden = !titleTextField.isHidden
         delegate?.expand(!titleTextField.isHidden)
+    }
+    
+    func onGesture() {
+        collapse()
     }
     
     func collapse() {
