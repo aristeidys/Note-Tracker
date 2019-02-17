@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-fz-uIZ">
-                    <rect key="frame" x="0.0" y="10" width="373" height="162"/>
+                    <rect key="frame" x="0.0" y="10" width="374" height="162"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-nb-hLo">
-                            <rect key="frame" x="10" y="0.0" width="353" height="22"/>
+                            <rect key="frame" x="10" y="0.0" width="354" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="22" id="avt-fc-50G"/>
                             </constraints>
@@ -28,13 +28,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember to buy the tomatoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-P2-d4J">
-                            <rect key="frame" x="10" y="32" width="353" height="110"/>
+                            <rect key="frame" x="10" y="32" width="354" height="110"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOf-bW-vtt">
-                            <rect key="frame" x="0.0" y="142" width="363" height="20"/>
+                            <rect key="frame" x="0.0" y="142" width="364" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="9by-D0-koi"/>
                             </constraints>
@@ -58,21 +58,11 @@
                         <constraint firstItem="a3N-nb-hLo" firstAttribute="top" secondItem="Tbt-fz-uIZ" secondAttribute="top" id="yis-Pu-PhZ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-De-2zd" userLabel="Delete Indicator">
-                    <rect key="frame" x="373" y="1" width="1" height="180"/>
-                    <color key="backgroundColor" red="1" green="0.1118306135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="1" id="rkN-Jx-tpI"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="RlF-fF-au8" firstAttribute="trailing" secondItem="KBc-De-2zd" secondAttribute="trailing" id="PNI-Io-wDx"/>
-                <constraint firstItem="KBc-De-2zd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Qnj-Lj-JKp"/>
-                <constraint firstAttribute="bottom" secondItem="KBc-De-2zd" secondAttribute="bottom" constant="1" id="dne-HL-r2a"/>
+                <constraint firstItem="RlF-fF-au8" firstAttribute="trailing" secondItem="Tbt-fz-uIZ" secondAttribute="trailing" id="ePk-Im-To5"/>
                 <constraint firstItem="Tbt-fz-uIZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jah-lU-lXv"/>
                 <constraint firstItem="Tbt-fz-uIZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="kGx-SO-oZ4"/>
-                <constraint firstItem="KBc-De-2zd" firstAttribute="leading" secondItem="Tbt-fz-uIZ" secondAttribute="trailing" id="m83-Rx-7vg"/>
                 <constraint firstAttribute="bottom" secondItem="Tbt-fz-uIZ" secondAttribute="bottom" constant="10" id="vy5-cK-h2p"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
