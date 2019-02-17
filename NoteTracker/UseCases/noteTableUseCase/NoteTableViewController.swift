@@ -36,7 +36,8 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     
     func reload() {
         tableView.reloadData()
-        if let numOfRows = interactor.fetchDataSource()?.count {
+        if let numOfRows = interactor.fetchDataSource()?.count,
+            numOfRows > 0 {
             let indexPath = NSIndexPath(item: numOfRows - 1, section: 0)
             tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
         }
