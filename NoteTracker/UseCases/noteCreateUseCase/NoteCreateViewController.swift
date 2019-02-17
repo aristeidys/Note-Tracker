@@ -52,6 +52,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     }
     
     func collapse() {
+        moreButton.setImage(UIImage(named: "icons8-slide-up-40"), for: .normal)
         self.descTextField.resignFirstResponder()
         self.titleTextField.resignFirstResponder()
         self.titleTextField.isHidden = true
