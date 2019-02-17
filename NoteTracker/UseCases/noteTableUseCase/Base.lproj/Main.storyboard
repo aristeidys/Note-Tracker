@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl">
-                                <rect key="frame" x="5" y="69" width="365" height="531"/>
+                                <rect key="frame" x="5" y="69" width="365" height="528"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" constant="5" id="N1o-qo-dA0"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="top" secondItem="Iah-Jf-gSW" secondAttribute="top" constant="5" id="O87-Qv-uz6"/>
                             <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="b5t-zj-LRl" secondAttribute="trailing" constant="5" id="Sln-PK-uFY"/>
-                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="2" id="Y0D-dE-Hr8"/>
+                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="5" id="Y0D-dE-Hr8"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="trailing" secondItem="Bkx-ba-AZ3" secondAttribute="trailing" id="jRZ-xb-wi7"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Bkx-ba-AZ3" secondAttribute="leading" id="krM-ww-PPW"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" constant="5" id="sjL-xC-yoc"/>
@@ -85,11 +85,11 @@
         <scene sceneID="9mI-KG-QQp">
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="531"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="separatorColor" name="Grey"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="xve-rj-EVz" id="q1A-xD-z3a"/>
