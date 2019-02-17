@@ -11,7 +11,10 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
+    
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var moreButton: UIButton!
+    
     var delegate: AdjustHeightDelegate?
     
     var reloadDelegate: ReloadDelegate?
@@ -34,9 +37,14 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         interactor?.processNewNote(note)
         reloadDelegate?.reload()
     }
+    
     @IBAction func onMoreClicked(_ sender: Any) {
-        titleTextField.isHidden = !titleTextField.isHidden
-        delegate?.expand(!titleTextField.isHidden)
+        let isExpanded = !titleTextField.isHidden
+        titleTextField.isHidden = isExpanded
+        let icon = !isExpanded ? UIImage(named: "icons8-down-button-40") : UIImage(named: "icons8-slide-up-40")
+        moreButton.setImage(icon, for: .normal)
+        
+        delegate?.expand(!isExpanded)
     }
     
     func onGesture() {
