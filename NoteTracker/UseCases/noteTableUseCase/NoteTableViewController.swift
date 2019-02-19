@@ -19,11 +19,6 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         setupGestures()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
-    }
-    
     func setupGestures() {
         tableView.gestureRecognizers?.forEach({ (gesture) in
             gesture.addTarget(self, action: #selector(customSelector))
@@ -45,11 +40,16 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     
     func deleteNote(indexPath: IndexPath) {
         NoteWorker().deleteNote(self.data?[indexPath.row])
-        tableView.deleteRows(at: [indexPath], with: .top)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
     }
     
-    // MARK: Table view Delegates
+    
+    // MARK: Table view Delegate methods
+    
+    var deletedIndexPaths: [IndexPath] = []
+    var selectedNote: NoteModel?
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellView
         
@@ -81,15 +81,15 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         }
         return [delete]
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if selectedNote != nil {
-            tableView.performBatchUpdates({
-                self.selectedNote = nil
-                tableView.insertRows(at: deletedIndexPaths, with: .middle)
-                deletedIndexPaths = []
-                tableView.deselectRow(at: indexPath, animated: true)
-            })
+            self.selectedNote = nil
+            tableView.insertRows(at: deletedIndexPaths, with: .middle)
+            deletedIndexPaths = []
             return
         }
         
@@ -99,15 +99,10 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
             }
         }
         
-        tableView.performBatchUpdates({
-            tableView.deleteRows(at: deletedIndexPaths, with: UITableView.RowAnimation.middle)
-            self.selectedNote = self.data?[indexPath.row]
-            tableView.deselectRow(at: indexPath, animated: true)
-        })
+        self.selectedNote = self.data?[indexPath.row]
+        tableView.deleteRows(at: deletedIndexPaths, with: UITableView.RowAnimation.middle)
     }
     
-    var deletedIndexPaths: [IndexPath] = []
-    var selectedNote: NoteModel?
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (selectedNote != nil) {
@@ -115,7 +110,5 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         } else {
             return UITableView.automaticDimension
         }
-        
-        
     }
 }

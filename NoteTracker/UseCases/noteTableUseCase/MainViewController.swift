@@ -11,8 +11,8 @@ protocol CollapseCreateDelegate {
 class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate, CollapseCreateDelegate {
         
     @IBOutlet weak var noteTableView: UIView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var createContainerHeight: NSLayoutConstraint!
     
     var tableViewController: NoteTableViewController?

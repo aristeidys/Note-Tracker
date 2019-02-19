@@ -28,18 +28,20 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         super.viewDidLoad()
         
         // Do Binding
-        submitButton.setTitleColor(Colours.buttons, for: .normal)
-        submitButton.setTitleColor(Colours.secondary, for: .highlighted)
         descTextField.delegate = self
         titleTextField.delegate = self
         interactor = NoteCreateInteractor(self)
         titleTextField.isHidden = true
     }
     
+    
+    //MARK: Actions
+    
     @IBAction func onNoteSubmitted(_ sender: Any) {
         let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
         interactor?.processNewNote(note)
-        
+        onTextIsInvalid()
+
         descTextField.text = ""
         titleTextField.text = ""
         
@@ -55,6 +57,9 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         delegate?.expand(!isExpanded)
     }
     
+    
+    //MARK: textField Delegate
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if descTextField.isFirstResponder {
             interactor?.validateText(range, string)
@@ -62,10 +67,8 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         return true
     }
     
+    
     //MARK: callbacks
-    func onGesture() {
-        collapse()
-    }
     
     func collapse() {
         moreButton.setImage(UIImage(named: "icons8-slide-up-40"), for: .normal)
