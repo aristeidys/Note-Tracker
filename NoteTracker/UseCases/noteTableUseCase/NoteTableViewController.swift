@@ -43,9 +43,20 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         }
     }
     
+    func deleteNote(indexPath: IndexPath) {
+        NoteWorker().deleteNote(self.data?[indexPath.row])
+        tableView.deleteRows(at: [indexPath], with: .top)
+        tableView.reloadData()
+    }
+    
     // MARK: Table view Delegates
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellView
+        
+        if selectedNote != nil {
+            cell!.setupView(selectedNote!)
+            return cell!
+        }
         guard let myCell = cell, let myData = interactor.fetchDataSource() else {
             return NoteCellView()
         }
@@ -54,31 +65,57 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return interactor.fetchDataSource()?.count ?? 0
+        if selectedNote == nil {
+            return interactor.fetchDataSource()?.count ?? 0
+
+        } else {
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .default, title: "\u{267A}\n Delete") { action, index in
-            let alert = UIAlertController.init(title: "Are you sure?", message: "This action cannot be undone.", preferredStyle: .actionSheet)
-            let continueAction = UIAlertAction.init(title: "Continue", style: .destructive, handler: {(action) in  self.deleteNote(indexPath: indexPath) } )
-            let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: {(action) in } )
-            alert.addAction(continueAction)
-            alert.addAction(cancelAction)
-            
-            self.present(alert, animated: true, completion: nil)
+            Popups.presentDeletePopup(onvc: self) {_ in
+                self.deleteNote(indexPath: indexPath)
+            }
         }
-        
         return [delete]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedNote != nil {
+            tableView.performBatchUpdates({
+                self.selectedNote = nil
+                tableView.insertRows(at: deletedIndexPaths, with: .middle)
+                deletedIndexPaths = []
+                tableView.deselectRow(at: indexPath, animated: true)
+            })
+            return
+        }
         
-        self.performSegue(withIdentifier: "showDetail", sender: tableView.cellForRow(at: indexPath))
+        for (index, _) in data!.enumerated() {
+            if index != indexPath.row {
+                deletedIndexPaths.append(IndexPath(row: index, section: indexPath.section))
+            }
+        }
+        
+        tableView.performBatchUpdates({
+            tableView.deleteRows(at: deletedIndexPaths, with: UITableView.RowAnimation.middle)
+            self.selectedNote = self.data?[indexPath.row]
+            tableView.deselectRow(at: indexPath, animated: true)
+        })
     }
     
-    func deleteNote(indexPath: IndexPath) {
-        NoteWorker().deleteNote(self.data?[indexPath.row])
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        reload()
+    var deletedIndexPaths: [IndexPath] = []
+    var selectedNote: NoteModel?
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (selectedNote != nil) {
+            return view.frame.height
+        } else {
+            return UITableView.automaticDimension
+        }
+        
+        
     }
 }
