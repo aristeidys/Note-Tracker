@@ -71,6 +71,11 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         return [delete]
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "showDetail", sender: tableView.cellForRow(at: indexPath))
+    }
+    
     func deleteNote(indexPath: IndexPath) {
         NoteWorker().deleteNote(self.data?[indexPath.row])
         tableView.deleteRows(at: [indexPath], with: .automatic)

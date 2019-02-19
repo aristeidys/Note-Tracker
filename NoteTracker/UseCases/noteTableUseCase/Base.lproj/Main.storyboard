@@ -73,7 +73,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYy-GR-Vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="5Dr-ix-nYH">
+                <tapGestureRecognizer enabled="NO" id="5Dr-ix-nYH">
                     <connections>
                         <action selector="onTableTap:" destination="gOc-Nd-IvL" id="fRs-XO-hlI"/>
                     </connections>
@@ -84,8 +84,9 @@
         <!--Note Table View Controller-->
         <scene sceneID="9mI-KG-QQp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYX-TK-4ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mwz-wi-LN0">
                         <rect key="frame" x="0.0" y="0.0" width="365" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,10 +97,27 @@
                             <outlet property="delegate" destination="xve-rj-EVz" id="uah-Mq-Nbs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="ibX-5k-c5R" kind="show" identifier="showDetail" id="1VW-aT-P6p"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YYX-TK-4ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1714" y="-120"/>
+        </scene>
+        <!--Note Edit View Controller-->
+        <scene sceneID="jVh-Cw-jpV">
+            <objects>
+                <viewController id="ibX-5k-c5R" customClass="NoteEditViewController" customModule="NoteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pud-aJ-BTB">
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dax-Y0-SUc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TP-Fc-dNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2417" y="-109"/>
         </scene>
         <!--Note Create View Controller-->
         <scene sceneID="qrw-5X-Thk">
@@ -187,6 +205,9 @@
     <resources>
         <image name="icons8-plus-40" width="30" height="30"/>
         <image name="icons8-slide-up-40" width="30" height="30"/>
+        <namedColor name="Grey">
+            <color red="0.85500001907348633" green="0.85500001907348633" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey">
             <color red="0.85500001907348633" green="0.85500001907348633" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
