@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED40218889E800B6426C /* NoteTableViewController.swift */; };
-		1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */; };
 		1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */; };
-		1906ED4721888D8300B6426C /* NoteTableInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */; };
 		1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED482188A15C00B6426C /* NoteCellView.swift */; };
 		190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB24217F804A00BC5DF2 /* NoteWorker.swift */; };
 		190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB26217F804A00BC5DF2 /* NoteModel.swift */; };
 		190BEB2D217F804A00BC5DF2 /* NoteCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB27217F804A00BC5DF2 /* NoteCreateViewController.swift */; };
-		190BEB3B217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB37217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift */; };
 		191EDCE4217F29530098640D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EDCE3217F29530098640D /* AppDelegate.swift */; };
 		191EDCE9217F29530098640D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCE7217F29530098640D /* Main.storyboard */; };
 		191EDCEB217F29540098640D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 191EDCEA217F29540098640D /* Assets.xcassets */; };
@@ -26,13 +23,12 @@
 		192E8B1C218C604200736160 /* TYPEWR_B.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 192E8B1B218C604200736160 /* TYPEWR_B.TTF */; };
 		192E8B24218C94E600736160 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192E8B23218C94E600736160 /* DateHelper.framework */; };
 		1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179A2187AF8B0067EC55 /* MainViewController.swift */; };
-		1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */; };
-		194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */; };
 		19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */; };
 		1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998F65F218B0E12004622F6 /* NoteCellView.xib */; };
 		1998F666218B2226004622F6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F665218B2226004622F6 /* Design.swift */; };
 		1998F66A218BAACB004622F6 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F669218BAACB004622F6 /* KeyboardHandler.swift */; };
 		19AD19F6221AEC0000709F26 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */; };
+		19AD1A21221C49E800709F26 /* popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD1A20221C49E800709F26 /* popups.swift */; };
 		19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
 		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
 		19C8E4522187C46800CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
@@ -40,9 +36,7 @@
 		19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E455218840E300CC506C /* UITextField+Extension.swift */; };
 		19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */; };
 		19E11C0E2215D597007E4022 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19E11C0D2215D597007E4022 /* README.md */; };
-		19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E93B032180D2DC0031A3AA /* NoteModeTests.swift */; };
 		19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */; };
-		19EE9B7D218626EE00F5FA42 /* NoteCreateInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,15 +51,11 @@
 
 /* Begin PBXFileReference section */
 		1906ED40218889E800B6426C /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
-		1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewControllerTests.swift; sourceTree = "<group>"; };
 		1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractor.swift; sourceTree = "<group>"; };
-		1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractorTests.swift; sourceTree = "<group>"; };
 		1906ED482188A15C00B6426C /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
 		190BEB24217F804A00BC5DF2 /* NoteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWorker.swift; sourceTree = "<group>"; };
 		190BEB26217F804A00BC5DF2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		190BEB27217F804A00BC5DF2 /* NoteCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewController.swift; sourceTree = "<group>"; };
-		190BEB37217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewControllerTests.swift; sourceTree = "<group>"; };
-		190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWorkerTests.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		191EDCE0217F29530098640D /* NoteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191EDCE3217F29530098640D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191EDCE8217F29530098640D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,20 +70,18 @@
 		192E8B1B218C604200736160 /* TYPEWR_B.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = TYPEWR_B.TTF; sourceTree = "<group>"; };
 		192E8B23218C94E600736160 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/iOS/DateHelper.framework; sourceTree = "<group>"; };
 		1944179A2187AF8B0067EC55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		19565A862181F700003B50BF /* RepositoryBaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBaseTestCase.swift; sourceTree = "<group>"; };
 		1998F65F218B0E12004622F6 /* NoteCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
 		1998F665218B2226004622F6 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		1998F669218BAACB004622F6 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		19AD1A20221C49E800709F26 /* popups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popups.swift; sourceTree = "<group>"; };
 		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		19C8E455218840E300CC506C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		19C8E457218845FB00CC506C /* UITextFieldExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionTests.swift; sourceTree = "<group>"; };
 		19E11C0D2215D597007E4022 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		19E93B032180D2DC0031A3AA /* NoteModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModeTests.swift; sourceTree = "<group>"; };
 		19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateInteractor.swift; sourceTree = "<group>"; };
-		19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +112,8 @@
 			children = (
 				191EDCE7217F29530098640D /* Main.storyboard */,
 				1944179A2187AF8B0067EC55 /* MainViewController.swift */,
-				1944179C2187AFE20067EC55 /* MainViewControllerTests.swift */,
 				1906ED40218889E800B6426C /* NoteTableViewController.swift */,
-				1906ED4221888A0F00B6426C /* NoteTableViewControllerTests.swift */,
 				1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */,
-				1906ED4621888D8300B6426C /* NoteTableInteractorTests.swift */,
 			);
 			path = noteTableUseCase;
 			sourceTree = "<group>";
@@ -137,9 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				190BEB27217F804A00BC5DF2 /* NoteCreateViewController.swift */,
-				190BEB37217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift */,
 				19EE9B6E21860E5600F5FA42 /* NoteCreateInteractor.swift */,
-				19EE9B7C218626EE00F5FA42 /* NoteCreateInteractorTests.swift */,
 			);
 			path = noteCreateUseCase;
 			sourceTree = "<group>";
@@ -197,9 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				190BEB24217F804A00BC5DF2 /* NoteWorker.swift */,
-				190BEB39217F80CA00BC5DF2 /* NoteWorkerTests.swift */,
 				190BEB26217F804A00BC5DF2 /* NoteModel.swift */,
-				19E93B032180D2DC0031A3AA /* NoteModeTests.swift */,
 			);
 			path = noteStore;
 			sourceTree = "<group>";
@@ -218,6 +199,7 @@
 		1999E155217F499E0067962E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				19AD1A1F221C49D100709F26 /* Popups */,
 				192E8B18218C601A00736160 /* fonts */,
 				19C8E4542188408300CC506C /* Views */,
 				191EDCEA217F29540098640D /* Assets.xcassets */,
@@ -244,6 +226,14 @@
 				19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */,
 			);
 			path = noteEditUseCase;
+			sourceTree = "<group>";
+		};
+		19AD1A1F221C49D100709F26 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				19AD1A20221C49E800709F26 /* popups.swift */,
+			);
+			path = Popups;
 			sourceTree = "<group>";
 		};
 		19C8E44B2187C2DF00CC506C /* Frameworks */ = {
@@ -399,6 +389,7 @@
 			files = (
 				19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */,
 				1998F666218B2226004622F6 /* Design.swift in Sources */,
+				19AD1A21221C49E800709F26 /* popups.swift in Sources */,
 				19AD19F6221AEC0000709F26 /* NoteEditViewController.swift in Sources */,
 				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
@@ -419,15 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				19C8E4592188461400CC506C /* UITextFieldExtensionTests.swift in Sources */,
-				190BEB3B217F80CA00BC5DF2 /* NoteCreateViewControllerTests.swift in Sources */,
-				19E93B042180D2DC0031A3AA /* NoteModeTests.swift in Sources */,
-				1906ED4721888D8300B6426C /* NoteTableInteractorTests.swift in Sources */,
-				194ADF2E21834AB300A6B4A2 /* NoteWorkerTests.swift in Sources */,
 				19565A872181F700003B50BF /* RepositoryBaseTestCase.swift in Sources */,
 				191EDCF9217F29540098640D /* RealmURL.swift in Sources */,
-				19EE9B7D218626EE00F5FA42 /* NoteCreateInteractorTests.swift in Sources */,
-				1944179D2187AFE20067EC55 /* MainViewControllerTests.swift in Sources */,
-				1906ED4321888A0F00B6426C /* NoteTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
