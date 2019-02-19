@@ -7,7 +7,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
 
     var data: Results<NoteModel>?
     var cellId = "NoteCellView"
-    var gesturesDelegate: CollapseCreateDelegate!
+    var gesturesDelegate: CollapseCreateDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     }
     
     @objc func customSelector() {
-        gesturesDelegate.collapseCreateViewController()
+        gesturesDelegate?.collapseCreateViewController()
     }
     
     func reload() {
