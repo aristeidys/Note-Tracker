@@ -55,7 +55,7 @@
 		190BEB24217F804A00BC5DF2 /* NoteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWorker.swift; sourceTree = "<group>"; };
 		190BEB26217F804A00BC5DF2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		190BEB27217F804A00BC5DF2 /* NoteCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateViewController.swift; sourceTree = "<group>"; };
-		191EDCE0217F29530098640D /* NoteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		191EDCE0217F29530098640D /* Note Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		191EDCE3217F29530098640D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191EDCE8217F29530098640D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		191EDCEA217F29540098640D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		191EDCE1217F29530098640D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				191EDCE0217F29530098640D /* NoteTracker.app */,
+				191EDCE0217F29530098640D /* Note Tracker.app */,
 				191EDCF4217F29540098640D /* UnitTests.xctest */,
 			);
 			name = Products;
@@ -249,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		191EDCDF217F29530098640D /* NoteTracker */ = {
+		191EDCDF217F29530098640D /* Note Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 191EDCFD217F29540098640D /* Build configuration list for PBXNativeTarget "NoteTracker" */;
+			buildConfigurationList = 191EDCFD217F29540098640D /* Build configuration list for PBXNativeTarget "Note Tracker" */;
 			buildPhases = (
 				191EDCDC217F29530098640D /* Sources */,
 				191EDCDE217F29530098640D /* Resources */,
@@ -262,9 +262,9 @@
 			);
 			dependencies = (
 			);
-			name = NoteTracker;
+			name = "Note Tracker";
 			productName = EasyList;
-			productReference = 191EDCE0217F29530098640D /* NoteTracker.app */;
+			productReference = 191EDCE0217F29530098640D /* Note Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		191EDCF3217F29540098640D /* UnitTests */ = {
@@ -317,7 +317,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				191EDCDF217F29530098640D /* NoteTracker */,
+				191EDCDF217F29530098640D /* Note Tracker */,
 				191EDCF3217F29540098640D /* UnitTests */,
 			);
 		};
@@ -408,7 +408,7 @@
 /* Begin PBXTargetDependency section */
 		191EDCF6217F29540098640D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 191EDCDF217F29530098640D /* NoteTracker */;
+			target = 191EDCDF217F29530098640D /* Note Tracker */;
 			targetProxy = 191EDCF5217F29540098640D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -571,7 +571,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -597,7 +597,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -663,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		191EDCFD217F29540098640D /* Build configuration list for PBXNativeTarget "NoteTracker" */ = {
+		191EDCFD217F29540098640D /* Build configuration list for PBXNativeTarget "Note Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				191EDCFE217F29540098640D /* Debug */,
