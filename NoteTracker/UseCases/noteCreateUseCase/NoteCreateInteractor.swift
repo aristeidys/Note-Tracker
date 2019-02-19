@@ -2,6 +2,7 @@ import Foundation
 
 protocol NoteCreateInteractorLogic {
     func processNewNote(_ note: NoteModel)
+    func validateText(_ range: NSRange, _ text: String)
 }
 
 class NoteCreateInteractor: NoteCreateInteractorLogic {
@@ -14,16 +15,14 @@ class NoteCreateInteractor: NoteCreateInteractorLogic {
     }
     
     func processNewNote(_ note: NoteModel) {
-
-        if isTextValid(note.text) {
-            worker.createNote(note)
-            viewController?.onValidTextSubmitted()
-        } else {
-            viewController?.onInvalidText()
-        }
+        worker.createNote(note)
     }
     
-    private func isTextValid(_ text: String) -> Bool {
-        return  text == "" ? false : true
+    func validateText(_ range: NSRange, _ text: String) {
+        if (range.contains(0) && text == "") {
+            viewController?.onTextIsInvalid()
+        } else {
+            viewController?.onTextIsValid()
+        }
     }
 }

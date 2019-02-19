@@ -3,8 +3,12 @@ import UIKit
 
 
 protocol NoteControllerLogic {
-    func onInvalidText()
-    func onValidTextSubmitted()
+    func onTextIsInvalid()
+    func onTextIsValid()
+}
+
+protocol AdjustHeightDelegate {
+    func expand(_ expand: Bool)
 }
 
 class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate {
@@ -35,6 +39,10 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBAction func onNoteSubmitted(_ sender: Any) {
         let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
         interactor?.processNewNote(note)
+        
+        descTextField.text = ""
+        titleTextField.text = ""
+        
         reloadDelegate?.reload()
     }
     
@@ -47,6 +55,14 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         delegate?.expand(!isExpanded)
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if descTextField.isFirstResponder {
+            interactor?.validateText(range, string)
+        }
+        return true
+    }
+    
+    //MARK: callbacks
     func onGesture() {
         collapse()
     }
@@ -58,28 +74,12 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         self.titleTextField.isHidden = true
         delegate?.expand(false)
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        onNoteSubmitted("")
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        self.descTextField.showValid()
-        return true
-    }
-    
-    //MARK: callbacks
-    func onValidTextSubmitted() {
-        descTextField.text = ""
-        titleTextField.text = ""
-    }
-    
-    func onInvalidText() {
-        descTextField.showInvalid()
-    }
-}
 
-protocol AdjustHeightDelegate {
-    func expand(_ expand: Bool)
+    func onTextIsValid() {
+        submitButton.isEnabled = true
+    }
+    
+    func onTextIsInvalid() {
+        submitButton.isEnabled = false
+    }
 }
