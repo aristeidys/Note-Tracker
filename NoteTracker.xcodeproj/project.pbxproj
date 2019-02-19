@@ -27,7 +27,6 @@
 		1998F660218B0E12004622F6 /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998F65F218B0E12004622F6 /* NoteCellView.xib */; };
 		1998F666218B2226004622F6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F665218B2226004622F6 /* Design.swift */; };
 		1998F66A218BAACB004622F6 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1998F669218BAACB004622F6 /* KeyboardHandler.swift */; };
-		19AD19F6221AEC0000709F26 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */; };
 		19AD1A21221C49E800709F26 /* popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AD1A20221C49E800709F26 /* popups.swift */; };
 		19C8E44E2187C2DF00CC506C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44C2187C2DF00CC506C /* RealmSwift.framework */; };
 		19C8E44F2187C2DF00CC506C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C8E44D2187C2DF00CC506C /* Realm.framework */; };
@@ -74,7 +73,6 @@
 		1998F65F218B0E12004622F6 /* NoteCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
 		1998F665218B2226004622F6 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		1998F669218BAACB004622F6 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
-		19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		19AD1A20221C49E800709F26 /* popups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popups.swift; sourceTree = "<group>"; };
 		19C8E44C2187C2DF00CC506C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		19C8E44D2187C2DF00CC506C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				191EDCE3217F29530098640D /* AppDelegate.swift */,
-				191EDCEF217F29540098640D /* Info.plist */,
 				1999E156217F49C30067962E /* UseCases */,
 				1999E155217F499E0067962E /* Utilities */,
 				1999E14F217F3CE10067962E /* Store */,
@@ -199,6 +196,7 @@
 		1999E155217F499E0067962E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				191EDCEF217F29540098640D /* Info.plist */,
 				19AD1A1F221C49D100709F26 /* Popups */,
 				192E8B18218C601A00736160 /* fonts */,
 				19C8E4542188408300CC506C /* Views */,
@@ -213,19 +211,10 @@
 		1999E156217F49C30067962E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				19AD19F4221AEB9600709F26 /* noteEditUseCase */,
 				1906ED3F2188897100B6426C /* noteTableUseCase */,
 				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		19AD19F4221AEB9600709F26 /* noteEditUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				19AD19F5221AEC0000709F26 /* NoteEditViewController.swift */,
-			);
-			path = noteEditUseCase;
 			sourceTree = "<group>";
 		};
 		19AD1A1F221C49D100709F26 /* Popups */ = {
@@ -390,7 +379,6 @@
 				19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */,
 				1998F666218B2226004622F6 /* Design.swift in Sources */,
 				19AD1A21221C49E800709F26 /* popups.swift in Sources */,
-				19AD19F6221AEC0000709F26 /* NoteEditViewController.swift in Sources */,
 				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
 				191EDD06217F30BE0098640D /* AbstractRepository.swift in Sources */,
@@ -573,7 +561,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/NoteTracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NoteTracker/Utilities/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,7 +587,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/NoteTracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NoteTracker/Utilities/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

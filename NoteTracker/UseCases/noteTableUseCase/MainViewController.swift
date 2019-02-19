@@ -9,9 +9,7 @@ protocol CollapseCreateDelegate {
 }
 
 class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate, CollapseCreateDelegate {
-    
-    @IBOutlet weak var textFieldView: UIView!
-    
+        
     @IBOutlet weak var noteTableView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -25,12 +23,9 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
         self.title = "Note Tracker"
         noteCreateViewController?.delegate = self
         tableViewController?.gesturesDelegate = self
-        textFieldView.layer.cornerRadius = 7;
-        textFieldView.layer.masksToBounds = true;
-        noteTableView.layer.cornerRadius = 7;
-        noteTableView.layer.masksToBounds = true;
     }
     
+    // Perform Binding
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "noteTableSegue" {
             if let destination = segue.destination as? NoteTableViewController {
@@ -57,14 +52,10 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
     }
     
     func expand(_ expand: Bool) {
-        UIView.animate(withDuration: 1.5) {
-            if expand {
-                self.createContainerHeight.constant = 95
-            } else {
-                self.createContainerHeight.constant = 60
-            }
+        if expand {
+            self.createContainerHeight.constant = 95
+        } else {
+            self.createContainerHeight.constant = 60
         }
-        
     }
-    
 }
