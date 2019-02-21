@@ -6,7 +6,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     var interactor: NoteTableInteractorLogic = NoteTableInteractor()
 
     var data: Results<NoteModel>?
-    var cellId = "NoteCellView"
+    var cellId = "noteCellView"
     var gesturesDelegate: CollapseCreateDelegate?
     
     override func viewDidLoad() {
@@ -14,7 +14,6 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         
         data = interactor.fetchDataSource()
         let nib = UINib.init(nibName: cellId, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
         tableView.separatorColor = Colours.secondary
         setupGestures()
     }
