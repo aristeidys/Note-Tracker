@@ -42,14 +42,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl" userLabel="Table Container View">
-                                <rect key="frame" x="5" y="69" width="365" height="484"/>
+                                <rect key="frame" x="5" y="69" width="365" height="494"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkx-ba-AZ3" userLabel="Text Container View">
-                                <rect key="frame" x="5" y="558" width="365" height="60"/>
+                                <rect key="frame" x="5" y="563" width="365" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="q6V-DV-sdI"/>
                                 </constraints>
@@ -60,10 +60,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" constant="5" id="N1o-qo-dA0"/>
+                            <constraint firstItem="Iah-Jf-gSW" firstAttribute="bottom" secondItem="Bkx-ba-AZ3" secondAttribute="bottom" id="N1o-qo-dA0"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="top" secondItem="Iah-Jf-gSW" secondAttribute="top" constant="5" id="O87-Qv-uz6"/>
                             <constraint firstItem="Iah-Jf-gSW" firstAttribute="trailing" secondItem="b5t-zj-LRl" secondAttribute="trailing" constant="5" id="Sln-PK-uFY"/>
-                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" constant="5" id="Y0D-dE-Hr8"/>
+                            <constraint firstItem="Bkx-ba-AZ3" firstAttribute="top" secondItem="b5t-zj-LRl" secondAttribute="bottom" id="Y0D-dE-Hr8"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="trailing" secondItem="Bkx-ba-AZ3" secondAttribute="trailing" id="jRZ-xb-wi7"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Bkx-ba-AZ3" secondAttribute="leading" id="krM-ww-PPW"/>
                             <constraint firstItem="b5t-zj-LRl" firstAttribute="leading" secondItem="Iah-Jf-gSW" secondAttribute="leading" constant="5" id="sjL-xC-yoc"/>
@@ -107,7 +107,7 @@
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="484"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -197,11 +197,11 @@
             <objects>
                 <viewController title="Details" modalPresentationStyle="pageSheet" id="0w2-m2-PHM" customClass="NoteEditViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P4N-pW-Kpo">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abb-VG-0Br">
-                                <rect key="frame" x="10" y="10" width="345" height="400"/>
+                                <rect key="frame" x="10" y="10" width="345" height="410"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El3-4d-lO2" userLabel="Desc Label">
                                         <rect key="frame" x="0.0" y="61" width="345" height="21"/>
@@ -233,7 +233,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V9B-dZ-IdM" userLabel="Desc Text View">
-                                        <rect key="frame" x="0.0" y="82" width="345" height="318"/>
+                                        <rect key="frame" x="0.0" y="82" width="345" height="328"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" name="Lila"/>
