@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-505" y="109"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Title-->
         <scene sceneID="C9d-oB-LFd">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="gOc-Nd-IvL" customClass="MainViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,8 +63,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iah-Jf-gSW"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="XXA-HB-OTN"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Title" id="0Xw-Rk-UcH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0sj-Ih-fnN">
+                            <connections>
+                                <action selector="onEditPressed:" destination="gOc-Nd-IvL" id="uzK-v0-Hlj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="N1o-qo-dA0" id="ePx-d1-j1U"/>
                         <outlet property="createContainerHeight" destination="q6V-DV-sdI" id="z8w-hM-RhF"/>
@@ -84,7 +89,7 @@
         <scene sceneID="9mI-KG-QQp">
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
                         <rect key="frame" x="0.0" y="0.0" width="365" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,11 +151,11 @@
                                         <constraint firstItem="jng-qL-0Fa" firstAttribute="leading" secondItem="iaH-P2-Gle" secondAttribute="leading" constant="10" id="o76-oA-7cM"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" name="LightBlue"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="nRl-Ti-Tbd" id="L1x-8b-2lT"/>
                                     <outlet property="descriptionLabel" destination="JEo-zK-RMs" id="RbY-Ru-9Vk"/>
                                     <outlet property="titleLabel" destination="fU0-Qz-fKx" id="3u2-Hb-o4L"/>
-                                    <segue destination="0w2-m2-PHM" kind="show" identifier="showDetailSegue" id="TZi-4H-TWu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,6 +164,9 @@
                             <outlet property="delegate" destination="xve-rj-EVz" id="uah-Mq-Nbs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="0w2-m2-PHM" kind="show" identifier="showDetailSegue" id="wWW-LR-Ohw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYX-TK-4ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

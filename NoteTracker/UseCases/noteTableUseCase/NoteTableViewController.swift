@@ -88,7 +88,15 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         return [delete]
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard !tableView.isEditing else {
+            return
+        }
+        performSegue(withIdentifier: "showDetailSegue", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showDetailSegue" {
             if let index = tableView.indexPathForSelectedRow?.row,
                 let safeData = data,

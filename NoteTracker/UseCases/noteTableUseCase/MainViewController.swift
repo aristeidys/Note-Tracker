@@ -15,6 +15,13 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var createContainerHeight: NSLayoutConstraint!
     
+    @IBAction func onEditPressed(_ sender: Any) {
+       
+        if let editing = tableViewController?.tableView.isEditing {
+            tableViewController?.tableView.setEditing(!editing, animated: true)
+        }
+
+    }
     var tableViewController: NoteTableViewController?
     var noteCreateViewController: NoteCreateViewController?
     
