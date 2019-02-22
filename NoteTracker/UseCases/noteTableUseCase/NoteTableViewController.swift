@@ -8,12 +8,11 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     var data: Results<NoteModel>?
     var cellId = "noteCellView"
     var gesturesDelegate: CollapseCreateDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         data = interactor.fetchDataSource()
-        let nib = UINib.init(nibName: cellId, bundle: nil)
         tableView.separatorColor = Colours.secondary
         setupGestures()
     }
@@ -59,7 +58,13 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         guard let myCell = cell, let myData = interactor.fetchDataSource() else {
             return NoteCellView()
         }
-        myCell.setupView(myData[indexPath.row])
+        let note = myData[indexPath.row]
+        myCell.setupView(note)
+        
+        if note.title == ""  {
+            myCell.titleLabel.isHidden
+        }
+        
         return myCell
     }
     
@@ -81,33 +86,13 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         return [delete]
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if selectedNote != nil {
-            self.selectedNote = nil
-            tableView.insertRows(at: deletedIndexPaths, with: .middle)
-            deletedIndexPaths = []
-            return
-        }
-        
-        for (index, _) in data!.enumerated() {
-            if index != indexPath.row {
-                deletedIndexPaths.append(IndexPath(row: index, section: indexPath.section))
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            if let index = tableView.indexPathForSelectedRow?.row,
+                let safeData = data,
+                let destination = segue.destination as? NoteEditViewController {
+                    destination.note = safeData[index]
             }
-        }
-        
-        self.selectedNote = self.data?[indexPath.row]
-        tableView.deleteRows(at: deletedIndexPaths, with: UITableView.RowAnimation.middle)
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (selectedNote != nil) {
-            return view.frame.height
-        } else {
-            return UITableView.automaticDimension
         }
     }
 }
