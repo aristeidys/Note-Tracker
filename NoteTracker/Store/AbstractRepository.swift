@@ -34,4 +34,15 @@ public class AbstractRepository: Repository {
             realm.delete(existingEntity)
         }
     }
+    
+    internal func delete(entities: [Object]?) {
+        
+        guard let existingEntity = entities else {
+            return
+        }
+        
+        try! realm.write {
+            realm.delete(existingEntity)
+        }
+    }
 }

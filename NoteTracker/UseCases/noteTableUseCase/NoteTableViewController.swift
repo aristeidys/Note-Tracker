@@ -13,7 +13,6 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         super.viewDidLoad()
 
         data = interactor.fetchDataSource()
-        tableView.separatorColor = Colours.secondary
         setupGestures()
     }
     
@@ -33,6 +32,22 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
             numOfRows > 0 {
             let indexPath = NSIndexPath(item: numOfRows - 1, section: 0)
             tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+        }
+    }
+    
+    func onDeletePressed() {
+        if let indexPaths = tableView.indexPathsForSelectedRows {
+            
+            var deleteData: [NoteModel] = []
+            
+            for paths in indexPaths {
+                if let note = self.data?[paths.row] {
+                    deleteData.append(note)
+                }
+            }
+            
+            NoteWorker().deleteNotes(deleteData)
+            tableView.deleteRows(at: indexPaths, with: .automatic)
         }
     }
     

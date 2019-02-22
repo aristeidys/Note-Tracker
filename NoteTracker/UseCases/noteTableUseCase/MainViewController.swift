@@ -11,17 +11,26 @@ protocol CollapseCreateDelegate {
 class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate, CollapseCreateDelegate {
         
     @IBOutlet weak var noteTableView: UIView!
+    @IBOutlet weak var textContainerView: UIView!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var createContainerHeight: NSLayoutConstraint!
+    
+    @IBAction func onDeletePressed(_ sender: Any) {
+        tableViewController?.onDeletePressed()
+    }
     
     @IBAction func onEditPressed(_ sender: Any) {
        
         if let editing = tableViewController?.tableView.isEditing {
             tableViewController?.tableView.setEditing(!editing, animated: true)
+            navigationController?.setToolbarHidden(editing, animated: true)
+            
+            self.createContainerHeight.constant = editing ? 60 : 0
+            textContainerView.isHidden = !editing
         }
-
     }
+    
     var tableViewController: NoteTableViewController?
     var noteCreateViewController: NoteCreateViewController?
     
@@ -30,6 +39,7 @@ class MainViewController: KeyboardHandler, ReloadDelegate, AdjustHeightDelegate,
         self.title = "Note Tracker"
         noteCreateViewController?.delegate = self
         tableViewController?.gesturesDelegate = self
+        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     // Perform Binding

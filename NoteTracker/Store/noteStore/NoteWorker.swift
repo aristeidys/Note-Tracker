@@ -19,6 +19,10 @@ class NoteWorker: AbstractRepository, NoteRepositoryLogic
         delete(entity: note)
     }
     
+    func deleteNotes(_ notes: [NoteModel]?) {
+        delete(entities: notes)
+    }
+    
     func getAll() -> Results<NoteModel>? {
         return realm.objects(NoteModel.self)
     }

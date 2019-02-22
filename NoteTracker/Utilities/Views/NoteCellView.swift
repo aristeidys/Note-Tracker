@@ -12,8 +12,6 @@ class NoteCellView: UITableViewCell {
         descriptionLabel.text = entity.text
         dateLabel.text = entity.editedDate?.toStringWithRelativeTime()
         
-        titleLabel.textColor = Colours.secondary
-        descriptionLabel.textColor = Colours.text
         dateLabel.textColor = .black
 
         

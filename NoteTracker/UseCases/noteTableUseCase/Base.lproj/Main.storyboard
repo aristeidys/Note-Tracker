@@ -13,16 +13,23 @@
         <!--Navigation Controller-->
         <scene sceneID="CsR-Wn-Heo">
             <objects>
-                <navigationController id="vcM-Vv-h7U" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="vcM-Vv-h7U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hkq-z9-SYo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mci-Ya-zKj">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="gOc-Nd-IvL" kind="relationship" relationship="rootViewController" id="fmG-yX-EIA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsH-MR-Pq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" id="2Vh-oj-OME"/>
             </objects>
             <point key="canvasLocation" x="-505" y="109"/>
         </scene>
@@ -35,14 +42,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-zj-LRl" userLabel="Table Container View">
-                                <rect key="frame" x="5" y="69" width="365" height="528"/>
+                                <rect key="frame" x="5" y="69" width="365" height="484"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Dr-ix-nYH" appends="YES" id="PPL-C7-k4b"/>
                                     <segue destination="xve-rj-EVz" kind="embed" identifier="noteTableSegue" id="9el-6z-mt3"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkx-ba-AZ3" userLabel="Text Container View">
-                                <rect key="frame" x="5" y="602" width="365" height="60"/>
+                                <rect key="frame" x="5" y="558" width="365" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="q6V-DV-sdI"/>
                                 </constraints>
@@ -63,6 +70,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iah-Jf-gSW"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Tz8-vA-yG0"/>
+                        <barButtonItem title="Delete" id="WhH-VN-pSC">
+                            <connections>
+                                <action selector="onDeletePressed:" destination="gOc-Nd-IvL" id="y2e-ih-6FY"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="0Xw-Rk-UcH">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0sj-Ih-fnN">
                             <connections>
@@ -70,10 +85,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="N1o-qo-dA0" id="ePx-d1-j1U"/>
                         <outlet property="createContainerHeight" destination="q6V-DV-sdI" id="z8w-hM-RhF"/>
                         <outlet property="noteTableView" destination="Bkx-ba-AZ3" id="Pmt-NR-Hya"/>
+                        <outlet property="textContainerView" destination="Bkx-ba-AZ3" id="k7l-dn-xgv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYy-GR-Vih" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,10 +107,10 @@
             <objects>
                 <tableViewController id="xve-rj-EVz" customClass="NoteTableViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Mwz-wi-LN0">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" name="Grey"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCellView" id="XZC-hP-INb" customClass="NoteCellView" customModule="Note_Tracker" customModuleProvider="target">
@@ -112,13 +129,13 @@
                                                         <constraint firstAttribute="height" constant="18" id="XBw-39-saR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Remember to buy the tomatoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-zK-RMs">
                                                     <rect key="frame" x="0.0" y="23.5" width="345" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="Lila"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRl-Ti-Tbd">
@@ -177,11 +194,11 @@
             <objects>
                 <viewController title="Details" modalPresentationStyle="pageSheet" id="0w2-m2-PHM" customClass="NoteEditViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P4N-pW-Kpo">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="464"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abb-VG-0Br">
-                                <rect key="frame" x="10" y="10" width="345" height="444"/>
+                                <rect key="frame" x="10" y="10" width="345" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El3-4d-lO2" userLabel="Desc Label">
                                         <rect key="frame" x="0.0" y="61" width="345" height="21"/>
@@ -199,7 +216,8 @@
                                             <constraint firstAttribute="height" constant="30" id="BAV-bl-rbP"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIr-pD-orq" userLabel="Title Label">
@@ -212,9 +230,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V9B-dZ-IdM" userLabel="Desc Text View">
-                                        <rect key="frame" x="0.0" y="82" width="345" height="362"/>
+                                        <rect key="frame" x="0.0" y="82" width="345" height="318"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" name="Lila"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -342,11 +361,11 @@
     <resources>
         <image name="icons8-plus-40" width="30" height="30"/>
         <image name="icons8-slide-up-40" width="30" height="30"/>
-        <namedColor name="Grey">
-            <color red="0.85500001907348633" green="0.85500001907348633" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="LightBlue">
             <color red="0.74699997901916504" green="0.8410000205039978" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Lila">
+            <color red="0.66399997472763062" green="0.25999999046325684" blue="0.55099999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
