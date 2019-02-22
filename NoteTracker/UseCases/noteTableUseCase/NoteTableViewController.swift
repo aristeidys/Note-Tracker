@@ -62,7 +62,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
         myCell.setupView(note)
         
         if note.title == ""  {
-            myCell.titleLabel.isHidden
+            myCell.titleLabel.isHidden = true
         }
         
         return myCell
