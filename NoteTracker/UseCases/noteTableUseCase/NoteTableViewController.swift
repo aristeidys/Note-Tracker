@@ -51,6 +51,8 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellView
         
+        cell?.titleLabel.isHidden = false
+        
         if selectedNote != nil {
             cell!.setupView(selectedNote!)
             return cell!

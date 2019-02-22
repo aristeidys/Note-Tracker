@@ -94,27 +94,30 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCellView" id="XZC-hP-INb" customClass="NoteCellView" customModule="Note_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="365" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XZC-hP-INb" id="iaH-P2-Gle">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XZC-hP-INb" id="iaH-P2-Gle">
                                     <rect key="frame" x="0.0" y="0.0" width="365" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jng-qL-0Fa">
-                                            <rect key="frame" x="10" y="5" width="345" height="33.5"/>
+                                            <rect key="frame" x="10" y="5" width="345" height="55.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Grocery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fU0-Qz-fKx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="18.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="XBw-39-saR"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Remember to buy the tomatoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-zK-RMs">
-                                                    <rect key="frame" x="0.0" y="5" width="345" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="23.5" width="345" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRl-Ti-Tbd">
-                                                    <rect key="frame" x="0.0" y="30.5" width="345" height="3"/>
+                                                    <rect key="frame" x="0.0" y="49" width="345" height="6.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -122,6 +125,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="6Qq-fz-umY"/>
                                                 <constraint firstAttribute="trailing" secondItem="fU0-Qz-fKx" secondAttribute="trailing" id="8tT-wv-5LM"/>
                                                 <constraint firstItem="nRl-Ti-Tbd" firstAttribute="top" secondItem="JEo-zK-RMs" secondAttribute="bottom" constant="5" id="AfH-hb-RWw"/>
                                                 <constraint firstItem="fU0-Qz-fKx" firstAttribute="leading" secondItem="jng-qL-0Fa" secondAttribute="leading" id="EOe-iw-WIu"/>
