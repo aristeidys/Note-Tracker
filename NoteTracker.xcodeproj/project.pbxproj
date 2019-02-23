@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19038B36221F17AC00C21130 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19038B35221F17AC00C21130 /* NoteEditViewController.swift */; };
+		19038B382221963D00C21130 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19038B372221963D00C21130 /* RecordViewController.swift */; };
 		1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED40218889E800B6426C /* NoteTableViewController.swift */; };
 		1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */; };
 		1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED482188A15C00B6426C /* NoteCellView.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		19038B35221F17AC00C21130 /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		19038B372221963D00C21130 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		1906ED40218889E800B6426C /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractor.swift; sourceTree = "<group>"; };
 		1906ED482188A15C00B6426C /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				19038B35221F17AC00C21130 /* NoteEditViewController.swift */,
+				19038B372221963D00C21130 /* RecordViewController.swift */,
 			);
 			path = noteEditUseCase;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				19EE9B6F21860E5600F5FA42 /* NoteCreateInteractor.swift in Sources */,
 				1998F666218B2226004622F6 /* Design.swift in Sources */,
 				19AD1A21221C49E800709F26 /* popups.swift in Sources */,
+				19038B382221963D00C21130 /* RecordViewController.swift in Sources */,
 				19038B36221F17AC00C21130 /* NoteEditViewController.swift in Sources */,
 				1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */,
 				190BEB2A217F804A00BC5DF2 /* NoteWorker.swift in Sources */,
