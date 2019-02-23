@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="-505" y="109"/>
         </scene>
-        <!--Title-->
+        <!--Note Tracker-->
         <scene sceneID="C9d-oB-LFd">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="gOc-Nd-IvL" customClass="MainViewController" customModule="Note_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Title" id="0Xw-Rk-UcH">
+                    <navigationItem key="navigationItem" title="Note Tracker" id="0Xw-Rk-UcH">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0sj-Ih-fnN">
                             <connections>
                                 <action selector="onEditPressed:" destination="gOc-Nd-IvL" id="uzK-v0-Hlj"/>

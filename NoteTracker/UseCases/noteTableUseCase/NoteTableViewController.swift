@@ -1,7 +1,18 @@
 import UIKit
 import RealmSwift
 
-class NoteTableViewController: UITableViewController {
+
+protocol NoteTableViewControllerProtocol {
+    var data: Results<NoteModel>? { get }
+    var delegate: MainViewControllerProtocol? { get set }
+    
+    func getTableView() -> UITableView?
+    func reload()
+    func onDeletePressed()
+}
+
+
+class NoteTableViewController: UITableViewController, NoteTableViewControllerProtocol {
     
     var interactor: NoteTableInteractorLogic = NoteTableInteractor()
 
@@ -26,6 +37,9 @@ class NoteTableViewController: UITableViewController {
         delegate?.collapseCreateViewController()
     }
     
+    func getTableView() -> UITableView? {
+        return tableView
+    }
     func reload() {
         tableView.reloadData()
         if let numOfRows = interactor.fetchDataSource()?.count,

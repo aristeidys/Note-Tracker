@@ -24,8 +24,8 @@ class MainViewController: KeyboardHandler, MainViewControllerProtocol {
     
     @IBAction func onEditPressed(_ sender: Any) {
        
-        if let editing = tableViewController?.tableView.isEditing {
-            tableViewController?.tableView.setEditing(!editing, animated: true)
+        if let editing = tableViewController?.getTableView()?.isEditing {
+            tableViewController?.getTableView()?.setEditing(!editing, animated: true)
             navigationController?.setToolbarHidden(editing, animated: true)
 
             UIView.animate(withDuration: 1) {
@@ -35,12 +35,11 @@ class MainViewController: KeyboardHandler, MainViewControllerProtocol {
         }
     }
     
-    var tableViewController: NoteTableViewController?
-    var noteCreateViewController: NoteCreateViewController?
+    var tableViewController: NoteTableViewControllerProtocol?
+    var noteCreateViewController: NoteCreateViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad(noteTableView, bottomConstraint)
-        self.title = "Note Tracker"
         tableViewController?.delegate = self
         noteCreateViewController?.delegate = self
         
@@ -48,7 +47,7 @@ class MainViewController: KeyboardHandler, MainViewControllerProtocol {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "Search Notes"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -56,11 +55,11 @@ class MainViewController: KeyboardHandler, MainViewControllerProtocol {
     // Perform Binding
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "noteTableSegue" {
-            if let destination = segue.destination as? NoteTableViewController {
+            if let destination = segue.destination as? NoteTableViewControllerProtocol {
                 tableViewController = destination
             }
         } else if segue.identifier == "noteCreateSegue" {
-            if let destination = segue.destination as? NoteCreateViewController {
+            if let destination = segue.destination as? NoteCreateViewControllerProtocol {
                 noteCreateViewController = destination
             }
         }
@@ -110,7 +109,7 @@ extension MainViewController: UISearchResultsUpdating {
             })
         }
         
-        tableViewController?.tableView.reloadData()
+        tableViewController?.getTableView()?.reloadData()
     }
     
     func isFiltering() -> Bool {

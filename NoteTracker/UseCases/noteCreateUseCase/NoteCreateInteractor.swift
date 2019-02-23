@@ -8,9 +8,9 @@ protocol NoteCreateInteractorLogic {
 class NoteCreateInteractor: NoteCreateInteractorLogic {
     
     var worker: NoteRepositoryLogic = NoteWorker()
-    var viewController: NoteControllerLogic?
+    var viewController: NoteCreateViewControllerProtocol?
     
-    init(_ vc: NoteControllerLogic) {
+    init(_ vc: NoteCreateViewControllerProtocol) {
         viewController = vc
     }
     

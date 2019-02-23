@@ -2,12 +2,15 @@
 import UIKit
 
 
-protocol NoteControllerLogic {
+protocol NoteCreateViewControllerProtocol {
+    var delegate: MainViewControllerProtocol? { get set }
+    
     func onTextIsInvalid()
     func onTextIsValid()
+    func collapse()
 }
 
-class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate {
+class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtocol, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
