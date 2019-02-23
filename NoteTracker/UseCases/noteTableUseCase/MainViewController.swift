@@ -1,9 +1,12 @@
 import UIKit
 
 protocol MainViewControllerProtocol {
+    var filteredNotes: [NoteModel] { get }
+    
     func collapseCreateViewController()
     func reload()
     func expand(_ expand: Bool)
+    func isFiltering() -> Bool
 }
 
 

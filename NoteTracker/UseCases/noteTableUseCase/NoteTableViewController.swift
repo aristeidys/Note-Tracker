@@ -75,37 +75,44 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
     // MARK: Table view Delegate methods
     
     var deletedIndexPaths: [IndexPath] = []
-    var selectedNote: NoteModel?
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellView
         
-        cell?.titleLabel.isHidden = false
+        let note: NoteModel?
         
-        if selectedNote != nil {
-            cell!.setupView(selectedNote!)
-            return cell!
+        if delegate?.isFiltering() == true {
+            note = delegate?.filteredNotes[indexPath.row]
+        } else {
+            note = interactor.fetchDataSource()?[indexPath.row]
         }
-        guard let myCell = cell, let myData = interactor.fetchDataSource() else {
+        
+        guard let safeCell = cell,
+            let safeNote = note else {
             return NoteCellView()
         }
-        let note = myData[indexPath.row]
-        myCell.setupView(note)
         
-        if note.title == ""  {
-            myCell.titleLabel.isHidden = true
+        safeCell.setupView(safeNote)
+        
+        safeCell.titleLabel.isHidden = false
+
+        if safeNote.title == ""  {
+            safeCell.titleLabel.isHidden = true
         }
         
-        return myCell
+        return safeCell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedNote == nil {
-            return interactor.fetchDataSource()?.count ?? 0
-
-        } else {
-            return 1
+        
+        if let delegate = delegate {
+            if delegate.isFiltering() {
+                return delegate.filteredNotes.count
+            }
         }
+        
+        return interactor.fetchDataSource()?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
