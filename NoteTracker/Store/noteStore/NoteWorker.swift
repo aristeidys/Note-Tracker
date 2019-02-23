@@ -4,6 +4,8 @@ import RealmSwift
 protocol NoteRepositoryLogic {
     func createNote(_ note: NoteModel)
     func getAll() -> Results<NoteModel>?
+    func deleteNotes(_ notes: [NoteModel]?)
+    func deleteNote(_ note: NoteModel?)
 }
 
 class NoteWorker: AbstractRepository, NoteRepositoryLogic

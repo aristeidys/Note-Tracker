@@ -22,9 +22,13 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        data = interactor.fetchDataSource()
         setupGestures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        data = interactor.fetchDataSource()
+        tableView.reloadData()
     }
     
     func setupGestures() {
@@ -40,9 +44,10 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
     func getTableView() -> UITableView? {
         return tableView
     }
+    
     func reload() {
         tableView.reloadData()
-        if let numOfRows = interactor.fetchDataSource()?.count,
+        if let numOfRows = data?.count,
             numOfRows > 0 {
             let indexPath = NSIndexPath(item: numOfRows - 1, section: 0)
             tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
@@ -85,7 +90,7 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
         if delegate?.isFiltering() == true {
             note = delegate?.filteredNotes[indexPath.row]
         } else {
-            note = interactor.fetchDataSource()?[indexPath.row]
+            note = data?[indexPath.row]
         }
         
         guard let safeCell = cell,
@@ -112,7 +117,7 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
             }
         }
         
-        return interactor.fetchDataSource()?.count ?? 0
+        return data?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

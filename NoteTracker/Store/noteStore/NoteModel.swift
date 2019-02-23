@@ -3,7 +3,6 @@ import RealmSwift
 
 @objcMembers class NoteModel: Object {
     
-    dynamic var id = 0
     dynamic var title: String = ""
     dynamic var text: String = ""
     dynamic var editedDate: Date? = nil

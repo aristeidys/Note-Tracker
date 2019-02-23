@@ -15,12 +15,22 @@ class NoteEditViewController: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextView!
     
+    let worker = NoteWorker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let note = note {
             noteTitle.text = note.title
             noteDescription.text = note.text
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        try! Realm().write {
+            note?.title = noteTitle.text ?? ""
+            note?.text = noteDescription.text
         }
     }
 }
