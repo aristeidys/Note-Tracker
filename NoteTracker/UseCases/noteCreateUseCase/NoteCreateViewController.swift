@@ -7,10 +7,6 @@ protocol NoteControllerLogic {
     func onTextIsValid()
 }
 
-protocol AdjustHeightDelegate {
-    func expand(_ expand: Bool)
-}
-
 class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,9 +15,8 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     
-    var delegate: AdjustHeightDelegate?
+    var delegate: MainViewControllerProtocol?
     
-    var reloadDelegate: ReloadDelegate?
     var interactor: NoteCreateInteractorLogic?
     
     override func viewDidLoad() {
@@ -45,7 +40,7 @@ class NoteCreateViewController: UIViewController, NoteControllerLogic, UITextFie
         descTextField.text = ""
         titleTextField.text = ""
         
-        reloadDelegate?.reload()
+        delegate?.reload()
     }
     
     @IBAction func onMoreClicked(_ sender: Any) {

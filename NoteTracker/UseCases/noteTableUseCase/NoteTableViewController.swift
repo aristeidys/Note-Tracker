@@ -1,13 +1,13 @@
 import UIKit
 import RealmSwift
 
-class NoteTableViewController: UITableViewController, ReloadDelegate {
+class NoteTableViewController: UITableViewController {
     
     var interactor: NoteTableInteractorLogic = NoteTableInteractor()
 
     var data: Results<NoteModel>?
     var cellId = "noteCellView"
-    var gesturesDelegate: CollapseCreateDelegate?
+    var delegate: MainViewControllerProtocol?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class NoteTableViewController: UITableViewController, ReloadDelegate {
     }
     
     @objc func customSelector() {
-        gesturesDelegate?.collapseCreateViewController()
+        delegate?.collapseCreateViewController()
     }
     
     func reload() {
