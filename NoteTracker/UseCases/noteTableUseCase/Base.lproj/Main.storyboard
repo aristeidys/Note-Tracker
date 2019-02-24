@@ -352,35 +352,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjf-96-Bzq">
-                                <rect key="frame" x="51" y="162" width="61" height="38"/>
+                                <rect key="frame" x="51" y="162" width="83" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="RECORD"/>
+                                <connections>
+                                    <action selector="onRecordTapped:" destination="1h5-H9-2eI" eventType="touchUpInside" id="xnM-NP-qlL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-Z2-Uvn">
-                                <rect key="frame" x="10" y="210" width="63" height="30"/>
+                                <rect key="frame" x="51" y="233" width="63" height="30"/>
                                 <state key="normal" title="PlayBack"/>
                                 <connections>
-                                    <action selector="playSound:" destination="1h5-H9-2eI" eventType="touchUpInside" id="SxI-qf-iL1"/>
+                                    <action selector="onPlaybackTapped:" destination="1h5-H9-2eI" eventType="touchUpInside" id="VSC-H1-N7K"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cnx-Z2-Uvn" firstAttribute="leading" secondItem="N8O-mv-hHd" secondAttribute="leading" constant="10" id="9b6-v8-z4F"/>
                             <constraint firstItem="tjf-96-Bzq" firstAttribute="top" secondItem="N8O-mv-hHd" secondAttribute="top" constant="98" id="MWh-AQ-Ppw"/>
+                            <constraint firstItem="cnx-Z2-Uvn" firstAttribute="leading" secondItem="N8O-mv-hHd" secondAttribute="leading" constant="51" id="VBU-Pi-aKU"/>
+                            <constraint firstItem="cnx-Z2-Uvn" firstAttribute="top" secondItem="tjf-96-Bzq" secondAttribute="bottom" constant="33" id="c3Z-rt-0AG"/>
                             <constraint firstItem="tjf-96-Bzq" firstAttribute="leading" secondItem="N8O-mv-hHd" secondAttribute="leading" constant="51" id="rpT-ZQ-LRr"/>
                             <constraint firstItem="N8O-mv-hHd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tjf-96-Bzq" secondAttribute="trailing" symbolic="YES" id="vRR-Pi-fU0"/>
-                            <constraint firstItem="cnx-Z2-Uvn" firstAttribute="top" secondItem="tjf-96-Bzq" secondAttribute="bottom" constant="10" id="xLj-pz-fS9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N8O-mv-hHd"/>
                     </view>
                     <connections>
-                        <outlet property="recordButton" destination="tjf-96-Bzq" id="pf4-ao-nPt"/>
+                        <outlet property="playBackButton" destination="cnx-Z2-Uvn" id="vts-Ai-6Cb"/>
+                        <outlet property="recordButton" destination="tjf-96-Bzq" id="Zga-In-xra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJn-Iv-RcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="801"/>
+            <point key="canvasLocation" x="522" y="838"/>
         </scene>
     </scenes>
     <resources>

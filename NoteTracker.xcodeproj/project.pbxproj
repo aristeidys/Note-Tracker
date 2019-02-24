@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19038B36221F17AC00C21130 /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19038B35221F17AC00C21130 /* NoteEditViewController.swift */; };
 		19038B382221963D00C21130 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19038B372221963D00C21130 /* RecordViewController.swift */; };
+		19038B3B2223294E00C21130 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19038B3A2223294E00C21130 /* Recorder.swift */; };
 		1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED40218889E800B6426C /* NoteTableViewController.swift */; };
 		1906ED4521888D6B00B6426C /* NoteTableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */; };
 		1906ED492188A15C00B6426C /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1906ED482188A15C00B6426C /* NoteCellView.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		19038B35221F17AC00C21130 /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		19038B372221963D00C21130 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		19038B3A2223294E00C21130 /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		1906ED40218889E800B6426C /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		1906ED4421888D6B00B6426C /* NoteTableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableInteractor.swift; sourceTree = "<group>"; };
 		1906ED482188A15C00B6426C /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				19038B372221963D00C21130 /* RecordViewController.swift */,
 			);
 			path = noteEditUseCase;
+			sourceTree = "<group>";
+		};
+		19038B392223293F00C21130 /* recording */ = {
+			isa = PBXGroup;
+			children = (
+				19038B3A2223294E00C21130 /* Recorder.swift */,
+			);
+			path = recording;
 			sourceTree = "<group>";
 		};
 		1906ED3F2188897100B6426C /* noteTableUseCase */ = {
@@ -222,6 +232,7 @@
 		1999E156217F49C30067962E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				19038B392223293F00C21130 /* recording */,
 				19038B34221F179300C21130 /* noteEditUseCase */,
 				1906ED3F2188897100B6426C /* noteTableUseCase */,
 				190BEB22217F7E7D00BC5DF2 /* noteCreateUseCase */,
@@ -397,6 +408,7 @@
 				190BEB2C217F804A00BC5DF2 /* NoteModel.swift in Sources */,
 				1998F66A218BAACB004622F6 /* KeyboardHandler.swift in Sources */,
 				19C8E456218840E300CC506C /* UITextField+Extension.swift in Sources */,
+				19038B3B2223294E00C21130 /* Recorder.swift in Sources */,
 				190BEB2D217F804A00BC5DF2 /* NoteCreateViewController.swift in Sources */,
 				1906ED41218889E800B6426C /* NoteTableViewController.swift in Sources */,
 				1944179B2187AF8B0067EC55 /* MainViewController.swift in Sources */,

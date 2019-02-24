@@ -7,137 +7,79 @@
 //
 
 import UIKit
-import AVFoundation
 
 
-class RecordViewController: UIViewController, AVAudioRecorderDelegate {
-    
-    var recordingSession: AVAudioSession!
-    var whistleRecorder: AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
-    
+class RecordViewController: UIViewController, RecorderDelegate {
+ 
     @IBOutlet weak var recordButton: UIButton!
     
-    @IBAction func playSound(_ sender: Any) {
-        let audioFilePath = RecordViewController.getWhistleURL()
-        
-        audioPlayer = try! AVAudioPlayer(contentsOf: audioFilePath)
-        
-        audioPlayer.play()
-    }
-
+    @IBOutlet weak var playBackButton: UIButton!
+    
+    var recorder = Recorder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Record", style: .plain, target: nil, action: nil)
+        recorder.delegate = self
         
-        recordingSession = AVAudioSession.sharedInstance()
-        
-        do {
-            try recordingSession.setCategory(.playAndRecord, mode: .default)
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        self.loadRecordingUI()
-                    } else {
-                        self.loadFailUI()
-                    }
-                }
-            }
-        } catch {
-            self.loadFailUI()
-        }
-    }
-    
-    func startRecording() {
-        // 1
-        view.backgroundColor = UIColor(red: 0.6, green: 0, blue: 0, alpha: 1)
-        
-        // 2
-        recordButton.setTitle("Tap to Stop", for: .normal)
-        
-        // 3
-        let audioURL = RecordViewController.getWhistleURL()
-        print(audioURL.absoluteString)
-        
-        // 4
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-        ]
-        
-        do {
-            // 5
-            whistleRecorder = try AVAudioRecorder(url: audioURL, settings: settings)
-            whistleRecorder.delegate = self
-            whistleRecorder.record()
-        } catch {
-            finishRecording(success: false)
-        }
-    }
-    
-    func loadRecordingUI() {
-        recordButton.translatesAutoresizingMaskIntoConstraints = false
-        recordButton.setTitle("Tap to Record", for: .normal)
-        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
-        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        view.addSubview(recordButton)
-    }
-    
-    func loadFailUI() {
-        let failLabel = UILabel()
-        failLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        failLabel.text = "Recording failed: please ensure the app has access to your microphone."
-        failLabel.numberOfLines = 0
-        
-        view.addSubview(failLabel)
-    }
-    
-    class func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
-    class func getWhistleURL() -> URL {
-        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
-    }
-    
-    @objc func recordTapped() {
-        if whistleRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
-    @objc func nextTapped() {
-        
-    }
-    
-    func finishRecording(success: Bool) {
-        view.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1)
-        
-        whistleRecorder.stop()
-        whistleRecorder = nil
-        
-        if success {
-            recordButton.setTitle("Tap to Re-record", for: .normal)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
-        } else {
-            recordButton.setTitle("Tap to Record", for: .normal)
+        recorder.startSession { (result: RecordingResult) in
+            switch result {
             
-            let ac = UIAlertController(title: "Record failed", message: "There was a problem recording your whistle; please try again.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+                case RecordingResult.FAILURE:
+                    print("RECORD: failed start session")
+                    self.onRecordingFailure()
+                
+                case RecordingResult.NOTALLOUD:
+                    print("RECORD: didn't alloud open mic")
+
+                    self.recordButton.titleLabel?.text = "You Not alloud recording voice"
+                
+                case RecordingResult.SUCCESS:
+                    print("RECORD: opened session successfully")
+
+                    break
+            }
         }
     }
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
+    @IBAction func onRecordTapped(_ sender: Any) {
+        
+        if isRecording {
+            print("RECORD: stoprecording")
+
+            recorder.stopRecording()
+        } else {
+            print("RECORD: start recording")
+
+            recorder.startRecording()
+        }
+    }
+    
+    @IBAction func onPlaybackTapped(_ sender: Any) {
+        
+        recorder.playBack()
+    }
+    
+    var isRecording = false
+    
+    // MARK: recorder delegates
+    
+    func onRecordingFailure() {
+        DispatchQueue.main.async {
+            self.recordButton.titleLabel?.text = "FAILURE RECORDING"
+        }
+    }
+    
+    func onStartRecording() {
+        DispatchQueue.main.async {
+            self.recordButton.titleLabel?.text = "RECORDING"
+            self.isRecording = true
+        }
+    }
+    
+    func onPlayBackError() {
+        DispatchQueue.main.async {
+            self.playBackButton.titleLabel?.text = "FAILURE PLAYBACK"
         }
     }
 }
