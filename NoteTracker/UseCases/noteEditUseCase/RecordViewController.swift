@@ -24,10 +24,6 @@ class RecordViewController: UIViewController, RecorderDelegate {
         
         recorder.askPermissions { (result: RecordingResult) in
             switch result {
-            
-                case RecordingResult.FAILURE:
-                    print("RECORD: failed start session")
-                    self.onRecordingFailure()
                 
                 case RecordingResult.NOTALLOUD:
                     print("RECORD: didn't alloud open mic")
@@ -65,9 +61,7 @@ class RecordViewController: UIViewController, RecorderDelegate {
     // MARK: recorder delegates
     
     func onRecordingFailure() {
-        DispatchQueue.main.async {
-            self.recordButton.titleLabel?.text = "FAILURE RECORDING"
-        }
+    
     }
     
     func onStartRecording() {

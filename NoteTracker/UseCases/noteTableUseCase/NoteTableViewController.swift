@@ -18,6 +18,8 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
 
     var data: Results<NoteModel>?
     var cellId = "noteCellView"
+    var audioCellId = "noteAudioCellView"
+
     var delegate: MainViewControllerProtocol?
         
     override func viewDidLoad() {

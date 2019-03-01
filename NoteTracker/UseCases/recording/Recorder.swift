@@ -48,15 +48,13 @@ class Recorder: NSObject, AVAudioRecorderDelegate, RecorderProtocol {
     var delegate: RecorderDelegate?
     let recordingSession = AVAudioSession.sharedInstance()
     var state: RecordingState = .recordingStoped
-    
-    public func getPermissions(_ completion: @escaping RecordingCompletion) {
-        
-        let alert = UIAlertController(title: "Record a sound?", message: "Would you like the app to record a sound?", preferredStyle: .alert)
-        let accept = UIAlertAction(title: "OK", style: .default, handler: {_ in self.askPermissions(completion)})
-        let deny = UIAlertAction(title: "DENY", style: .cancel, handler: nil)
 
-        if recordingSession.recordPermission != .undetermined {
-            
+    
+    override init() {
+        super.init()
+        
+        askPermissions {(result: RecordingResult) in
+            // TODO: empty
         }
     }
     

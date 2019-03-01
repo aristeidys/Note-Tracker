@@ -51,25 +51,13 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
             }
         }
     }
+    
     @IBAction func onRecordingStarted(_ sender: Any) {
         if canRecord {
-            recorder.askPermissions { (result) in
-                switch result {
-                case .ALLOUD :
-                    
-                    self.recordPath = Date().toString()
-                    self.recorder.startRecording(id: self.recordPath!)
-                    DispatchQueue.main.async {
-                        self.descTextField.text = "Recording..."
-                    }
-                    
-                case .NOTALLOUD :
-                    // TODO
-                    break
-                case .FAILURE:
-                    // TODO
-                    break
-                }
+            self.recordPath = Date().toString()
+            self.recorder.startRecording(id: self.recordPath!)
+            DispatchQueue.main.async {
+                self.descTextField.text = "Recording..."
             }
         }
     }
@@ -77,23 +65,14 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
     @IBAction func onNoteSubmitted(_ sender: Any) {
 
         if recorder.state == .recordingStarted {
-            recordingReady = true
-            recorder.stopRecording()
-            DispatchQueue.main.async {
-                self.descTextField.text = "Recording ready."
-                self.descTextField.isEnabled = false
-            }
-            onTextIsValid()
+            stopRecording()
         } else {
         
             let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
         
             if recordingReady {
-                
                 note.pathToRecording = recordPath
-                recordPath = nil
-                recordingReady = false
-                self.descTextField.isEnabled = true
+                processRecording()
             }
             
             interactor?.processNewNote(note)
@@ -104,6 +83,23 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
             
             delegate?.reload()
         }
+    }
+    
+    private func stopRecording() {
+        
+        recordingReady = true
+        recorder.stopRecording()
+        DispatchQueue.main.async {
+            self.descTextField.text = "Recording ready."
+            self.descTextField.isEnabled = false
+        }
+        onTextIsValid()
+    }
+    
+    private func processRecording() {
+        recordPath = nil
+        recordingReady = false
+        self.descTextField.isEnabled = true
     }
     
     @IBAction func onMoreClicked(_ sender: Any) {
