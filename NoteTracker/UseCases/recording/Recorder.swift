@@ -122,9 +122,9 @@ class Recorder: NSObject, AVAudioRecorderDelegate, RecorderProtocol {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilePath)
             audioPlayer.play()
             print("RECORD: PlayBack Started")
-        } catch {
+        } catch let error {
             delegate?.onPlayBackError()
-            print("RECORD: PlayBack Error")
+            print("RECORD: PlayBack Error \(error)")
         }
         
     }

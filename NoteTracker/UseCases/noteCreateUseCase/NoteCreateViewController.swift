@@ -55,7 +55,7 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
     @IBAction func onRecordingStarted(_ sender: Any) {
         if canRecord {
             self.recordPath = Date().toString()
-            self.recorder.startRecording(id: self.recordPath!)
+            self.recorder.startRecording(id: "hello.m4p")
             DispatchQueue.main.async {
                 self.descTextField.text = "Recording..."
             }

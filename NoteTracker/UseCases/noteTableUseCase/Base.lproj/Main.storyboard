@@ -183,7 +183,7 @@
                                     <outlet property="titleLabel" destination="fU0-Qz-fKx" id="3u2-Hb-o4L"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteAudioCellView" id="rul-RP-SR1" userLabel="noteAudioCellView" customClass="NoteAudioCellView">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteAudioCellView" id="rul-RP-SR1" userLabel="noteAudioCellView" customClass="NoteAudioCellView" customModule="Note_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="365" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rul-RP-SR1" id="9Ir-CM-YwS">
@@ -215,10 +215,31 @@
                                                         <constraint firstAttribute="width" constant="30" id="zHO-21-4A6"/>
                                                     </constraints>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-KL-acn">
+                                                    <rect key="frame" x="137.5" y="23.5" width="70" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pl-og-a3p">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" image="icons8-skip-to-start-40"/>
+                                                            <connections>
+                                                                <action selector="onSkipToStartTapped:" destination="rul-RP-SR1" eventType="touchUpInside" id="y2l-6z-9EU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BM-2g-Y1I">
+                                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                            <state key="normal" image="icons8-play-40"/>
+                                                            <connections>
+                                                                <action selector="onSoundControlTapped:" destination="rul-RP-SR1" eventType="touchUpInside" id="L1k-NC-0tX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="JrO-KL-acn" firstAttribute="top" secondItem="xGC-Tr-wTz" secondAttribute="top" id="3ud-6H-jl5"/>
                                                 <constraint firstAttribute="trailing" secondItem="nrF-qu-033" secondAttribute="trailing" id="5hu-cK-FRE"/>
+                                                <constraint firstItem="JrO-KL-acn" firstAttribute="centerX" secondItem="0dQ-WH-vcT" secondAttribute="centerX" id="5qv-Yb-JFE"/>
                                                 <constraint firstAttribute="bottom" secondItem="Pfi-D9-UeC" secondAttribute="bottom" id="Dyu-nl-bXT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Pfi-D9-UeC" secondAttribute="trailing" id="bLJ-74-zXQ"/>
                                                 <constraint firstItem="xGC-Tr-wTz" firstAttribute="leading" secondItem="0dQ-WH-vcT" secondAttribute="leading" id="cFF-NL-ynu"/>
@@ -239,8 +260,10 @@
                                 </tableViewCellContentView>
                                 <color key="tintColor" name="LightBlue"/>
                                 <connections>
-                                    <outlet property="dateLabel" destination="Pfi-D9-UeC" id="p0e-c8-5p1"/>
-                                    <outlet property="titleLabel" destination="nrF-qu-033" id="JKO-Az-MXc"/>
+                                    <outlet property="dateLabel" destination="Pfi-D9-UeC" id="z0r-X9-xZC"/>
+                                    <outlet property="skipToStartButton" destination="9Pl-og-a3p" id="tA6-zi-s3U"/>
+                                    <outlet property="soundControlButton" destination="5BM-2g-Y1I" id="1U9-y4-qug"/>
+                                    <outlet property="titleLabel" destination="nrF-qu-033" id="HDs-oS-hgv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -451,7 +474,9 @@
     </scenes>
     <resources>
         <image name="icons8-audio-40" width="30" height="30"/>
+        <image name="icons8-play-40" width="30" height="30"/>
         <image name="icons8-play-record-40" width="30" height="30"/>
+        <image name="icons8-skip-to-start-40" width="30" height="30"/>
         <image name="icons8-slide-up-40" width="30" height="30"/>
         <namedColor name="LightBlue">
             <color red="0.74699997901916504" green="0.8410000205039978" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

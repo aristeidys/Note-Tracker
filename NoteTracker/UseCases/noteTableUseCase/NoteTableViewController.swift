@@ -85,7 +85,7 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellView
+        let cell: NoteCellProtocol?
         
         let note: NoteModel?
         
@@ -95,20 +95,15 @@ class NoteTableViewController: UITableViewController, NoteTableViewControllerPro
             note = data?[indexPath.row]
         }
         
-        guard let safeCell = cell,
-            let safeNote = note else {
-            return NoteCellView()
+        if note?.pathToRecording == nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NoteCellProtocol
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: audioCellId, for: indexPath) as? NoteCellProtocol
         }
         
-        safeCell.setupView(safeNote)
-        
-        safeCell.titleLabel.isHidden = false
+        cell?.setupView(note)
 
-        if safeNote.title == ""  {
-            safeCell.titleLabel.isHidden = true
-        }
-        
-        return safeCell
+        return cell as? UITableViewCell ?? UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
