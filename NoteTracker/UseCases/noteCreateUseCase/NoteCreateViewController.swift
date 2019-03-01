@@ -1,7 +1,6 @@
 
 import UIKit
 
-
 protocol NoteCreateViewControllerProtocol {
     var delegate: MainViewControllerProtocol? { get set }
     
@@ -18,13 +17,21 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     
+    var recordPath: String?
+    
+    var canRecord = true
+    
+    var recordingReady = false
+    
+    var recorder: RecorderProtocol = Recorder()
+    
     var delegate: MainViewControllerProtocol?
     
     var interactor: NoteCreateInteractorLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do Binding
         descTextField.delegate = self
         titleTextField.delegate = self
@@ -35,15 +42,68 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
     
     //MARK: Actions
     
+    @IBAction func exit(_ sender: Any) {
+        if canRecord, recordPath != nil {
+            recorder.stopRecording()
+            recorder.deleteRecording(id: recordPath!)
+            DispatchQueue.main.async {
+                self.descTextField.text = ""
+            }
+        }
+    }
+    @IBAction func onRecordingStarted(_ sender: Any) {
+        if canRecord {
+            recorder.askPermissions { (result) in
+                switch result {
+                case .ALLOUD :
+                    
+                    self.recordPath = Date().toString()
+                    self.recorder.startRecording(id: self.recordPath!)
+                    DispatchQueue.main.async {
+                        self.descTextField.text = "Recording..."
+                    }
+                    
+                case .NOTALLOUD :
+                    // TODO
+                    break
+                case .FAILURE:
+                    // TODO
+                    break
+                }
+            }
+        }
+    }
+    
     @IBAction func onNoteSubmitted(_ sender: Any) {
-        let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
-        interactor?.processNewNote(note)
-        onTextIsInvalid()
 
-        descTextField.text = ""
-        titleTextField.text = ""
+        if recorder.state == .recordingStarted {
+            recordingReady = true
+            recorder.stopRecording()
+            DispatchQueue.main.async {
+                self.descTextField.text = "Recording ready."
+                self.descTextField.isEnabled = false
+            }
+            onTextIsValid()
+        } else {
         
-        delegate?.reload()
+            let note = NoteModel(title: titleTextField.text ?? "", text: descTextField?.text ?? "")
+        
+            if recordingReady {
+                
+                note.pathToRecording = recordPath
+                recordPath = nil
+                recordingReady = false
+                self.descTextField.isEnabled = true
+            }
+            
+            interactor?.processNewNote(note)
+            onTextIsInvalid()
+
+            descTextField.text = ""
+            titleTextField.text = ""
+            
+            delegate?.reload()
+        }
     }
     
     @IBAction func onMoreClicked(_ sender: Any) {
@@ -54,6 +114,7 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
         
         delegate?.expand(!isExpanded)
     }
+    
     
     
     //MARK: textField Delegate
@@ -77,10 +138,12 @@ class NoteCreateViewController: UIViewController, NoteCreateViewControllerProtoc
     }
 
     func onTextIsValid() {
-        submitButton.isEnabled = true
+        canRecord = false
+        submitButton.setImage(UIImage.init(imageLiteralResourceName: "icons8-plus-40"), for: .normal)
     }
     
     func onTextIsInvalid() {
-        submitButton.isEnabled = false
+        canRecord = true
+        submitButton.setImage(UIImage.init(imageLiteralResourceName: "icons8-play-record-40"), for: .normal)
     }
 }

@@ -269,18 +269,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="365" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-AE-GVu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-AE-GVu">
                                 <rect key="frame" x="325" y="15" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="j3e-u4-MbJ"/>
                                     <constraint firstAttribute="width" secondItem="E2W-AE-GVu" secondAttribute="height" id="rAh-xG-RFW"/>
                                 </constraints>
-                                <state key="normal" image="icons8-plus-40">
+                                <state key="normal" image="icons8-play-record-40">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="exit:" destination="dNL-nE-WDc" eventType="touchDragExit" id="BoB-MT-rjG"/>
                                     <action selector="onNoteSubmitted:" destination="dNL-nE-WDc" eventType="touchUpInside" id="EQD-7L-f7q"/>
+                                    <action selector="onRecordingStarted:" destination="dNL-nE-WDc" eventType="touchDown" id="Dmq-gb-kdc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28e-Pl-Iak" userLabel="More Button">
@@ -388,7 +390,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-plus-40" width="30" height="30"/>
+        <image name="icons8-play-record-40" width="30" height="30"/>
         <image name="icons8-slide-up-40" width="30" height="30"/>
         <namedColor name="LightBlue">
             <color red="0.74699997901916504" green="0.8410000205039978" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

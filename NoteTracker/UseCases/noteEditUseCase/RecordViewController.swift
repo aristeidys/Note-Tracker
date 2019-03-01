@@ -22,7 +22,7 @@ class RecordViewController: UIViewController, RecorderDelegate {
         
         recorder.delegate = self
         
-        recorder.startSession { (result: RecordingResult) in
+        recorder.askPermissions { (result: RecordingResult) in
             switch result {
             
                 case RecordingResult.FAILURE:
@@ -34,7 +34,7 @@ class RecordViewController: UIViewController, RecorderDelegate {
 
                     self.recordButton.titleLabel?.text = "You Not alloud recording voice"
                 
-                case RecordingResult.SUCCESS:
+                case RecordingResult.ALLOUD:
                     print("RECORD: opened session successfully")
 
                     break
@@ -51,13 +51,13 @@ class RecordViewController: UIViewController, RecorderDelegate {
         } else {
             print("RECORD: start recording")
 
-            recorder.startRecording()
+            recorder.startRecording(id: "hello")
         }
     }
     
     @IBAction func onPlaybackTapped(_ sender: Any) {
         
-        recorder.playBack()
+        recorder.playBack(id: "hello")
     }
     
     var isRecording = false

@@ -14,7 +14,9 @@ class NoteCellView: UITableViewCell {
         
         dateLabel.textColor = .black
 
-        
+        if let recordPath = entity.pathToRecording {
+            descriptionLabel.text = "has Recording \(recordPath)"
+        }
         titleLabel.font = Fonts.bigBold
         descriptionLabel.font = Fonts.primary
         dateLabel.font = Fonts.secondary
